@@ -1,7 +1,7 @@
 
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-          <a class="navbar-brand" href="index.php" style="color: #ebf4ef;">HamroGas</a>
+          <a class="navbar-brand" href="index.php" style="color: black;">HamroGas</a>
           <button
             class="navbar-toggler"
             type="button"

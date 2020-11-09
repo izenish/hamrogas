@@ -103,24 +103,24 @@ if (mysqli_num_rows($resultq) > 0){
     // echo "New record created successfully.
 
 
-  // // ---------To send an email-----------
-  // $message_body = "Use this code to confirm your order. :<br/><br/>" . $otp;
-  // require_once('phpmailer\otp-mail.php');
-  // $mail->MsgHTML($message_body);      
+  // ---------To send an email-----------
+  $message_body = "Use this code to confirm your order. :<br/><br/>" . $otp;
+  require_once('phpmailer\otp-mail.php');
+  $mail->MsgHTML($message_body);      
+echo $e;
+  // $mail->Body= "This is plain text email body";
+  $mail->addAddress($e);
+  $mail->SMTPDebug =0;
 
-  // // $mail->Body= "This is plain text email body";
-  // $mail->addAddress("manishagora52@gmail.com");
-  // $mail->SMTPDebug =0;
-
-  // if($mail->Send())
-  // {
-  //   echo "<script>alert('We have sent you an email to confirm your order.');</script>";
-  // }
-  // else
-  // {
-  //   echo "<script>alert('Error occured');</script>";
-  // }
-  // $mail->smtpClose();
+  if($mail->Send())
+  {
+    echo "<script>alert('We have sent you an email to confirm your order.');</script>";
+  }
+  else
+  {
+    echo "<script>alert('Error occured');</script>";
+  }
+  $mail->smtpClose();
   // -----mail part close----
 
 

@@ -9,7 +9,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
 define('DB_HOST', 'localhost'); 
 define('DB_USERNAME', 'root'); 
 define('DB_PASSWORD', ''); 
-define('DB_NAME', 'hamrogas');
+define('DB_NAME', 'notify');
 
 // Product Details 
 // Minimum amount is $0.50 US 

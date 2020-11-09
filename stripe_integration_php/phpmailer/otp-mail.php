@@ -19,10 +19,10 @@ $mail->Host ="smtp.gmail.com";
 $mail->SMTPAuth ="true";
 $mail->SMTPSecure ="tls";
 $mail->Port ="587";
-$mail->Username ="manishagora52@gmail.com";
-$mail->Password="cupcake07";
+$mail->Username ="hamrogas.nepal@gmail.com";
+$mail->Password="hamrogasHAMRAIMATRA";
 $mail->Subject ="Code to verify your email address";
-$mail->setFrom("manishagora52@gmail.com");
+$mail->setFrom("hamrogas.nepal@gmail.com");
 
 $mail->isHTML(true);
 

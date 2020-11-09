@@ -215,7 +215,8 @@ include "include/dbconnect.php";
 
       <div class="row mt-5">
       <?php 
-        $sql="select * from gas_cylinders order by id DESC";
+    
+        $sql="select * from gas_cylinders order by gas_id ASC";
         $res=mysqli_query($conn,$sql);
         if(mysqli_num_rows($res)>0)
         {
