@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2020 at 09:06 AM
+-- Generation Time: Nov 09, 2020 at 08:25 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -19,8 +19,42 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hg`
+-- Database: `notify`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(6) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `city` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip` int(11) NOT NULL,
+  `remarks` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postby_id` int(6) DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `is_verified` tinyint(1) DEFAULT 0,
+  `verifiedby_id` int(6) DEFAULT 1,
+  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `status` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `title`, `name`, `username`, `email`, `password`, `address`, `contact`, `city`, `zip`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
+(22, '1604647247-logoLight.JPG', 'admin', 'admin', 'admin@amin.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 123456789, 'admin', 90001, 'admin', 1, '2020-03-06 07:16:16', 1, 1, '2020-11-06 13:05:47', 1),
+(71, '1585573172-ed.jpg', 'Amanmool', 'amanmool10', 'amanmool03@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-27 09:22:50', 1, 1, '2020-03-30 18:44:32', 1);
 
 -- --------------------------------------------------------
 
@@ -69,7 +103,12 @@ INSERT INTO `customer` (`customer_id`, `email`, `postby_id`, `created_at`, `is_v
 (144, 'makdmksdf@gmail.com', 1, '2020-11-06 06:20:47', 0, 1, NULL, 1, 'manisha', 'gora', 'nepal', 2147483647, 'HP GAS', 'Pay Online', 'comercial', 1, 'macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-2020-2880x1800-1455.jpg', 'gas4.jpg', 424699, '27.65875250', '85.32471830'),
 (145, 'zenish737@gmail.com', 1, '2020-11-06 06:24:37', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'ssmsms', 2147483647, 'HP GAS', 'COD', 'comercial', 1, 'andrej-lisakov-V2OyJtFqEtY-unsplash.jpg', 'andrej-lisakov-V2OyJtFqEtY-unsplash (1).jpg', 104450, '27.65875250', '85.32471830'),
 (146, 'zenish7337@gmail.com', 1, '2020-11-06 06:27:33', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'dfdfdf', 2147483647, 'HP GAS', 'Pay Online', 'domestic', 1, 'andrej-lisakov-V2OyJtFqEtY-unsplash.jpg', 'andrej-lisakov-V2OyJtFqEtY-unsplash (1).jpg', 243523, '27.66659190', '85.42765530'),
-(147, 'zenish73327@gmail.com', 1, '2020-11-06 06:29:21', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nnnnn', 2147483647, 'HP GAS', 'COD', 'comercial', 1, '1195247805040623617.jpg', '1195247805040623617.jpg', 445386, '27.65875250', '85.32471830');
+(147, 'zenish73327@gmail.com', 1, '2020-11-06 06:29:21', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nnnnn', 2147483647, 'HP GAS', 'COD', 'comercial', 1, '1195247805040623617.jpg', '1195247805040623617.jpg', 445386, '27.65875250', '85.32471830'),
+(148, 'lat@long.com', 1, '2020-11-09 05:30:25', 0, 1, NULL, 1, 'lat', 'long', 'nepal', 2147483647, 'Subhidha gas', 'COD', 'comercial', 3, 'aa.jpg', '1.jpg', 923858, '27.65875250', '85.32471830'),
+(149, 'chel@ckehr.com', 1, '2020-11-09 06:09:04', 0, 1, NULL, 1, 'check', 'checl', 'nepal', 2147483647, 'HP GAS', 'COD', 'comercial', 1, '1.jpg', 'aa.jpg', 184337, '27.65875250', '85.32471830'),
+(154, '740317@khec.edu.np', 1, '2020-11-09 06:28:24', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nepal', 2147483647, 'HP GAS', 'COD', 'domestic', 1, 'aa.jpg', 'aa.jpg', 923358, '27.65875250', '85.32471830'),
+(158, 'manishagora52@gmail.com', 1, '2020-11-09 06:47:22', 0, 1, NULL, 1, 'sdsdsdsdsd', 'sdsds', 'nepal', 2147483647, 'HP GAS', 'COD', 'comercial', 1, 'aa.jpg', '1.jpg', 482444, '27.66658530', '85.42767250'),
+(163, 'amanmool384@gmail.com', 1, '2020-11-09 07:10:58', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nepal', 2147483647, 'HP GAS', 'COD', 'comercial', 1, 'aa.jpg', 'aa.jpg', 531599, '27.65875250', '85.32471830');
 
 -- --------------------------------------------------------
 
@@ -78,6 +117,40 @@ INSERT INTO `customer` (`customer_id`, `email`, `postby_id`, `created_at`, `is_v
 --
 
 CREATE TABLE `delivery_boy` (
+  `id` int(6) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `city` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip` int(11) NOT NULL,
+  `remarks` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postby_id` int(6) DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `is_verified` tinyint(1) DEFAULT 0,
+  `verifiedby_id` int(6) DEFAULT 1,
+  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `status` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `delivery_boy`
+--
+
+INSERT INTO `delivery_boy` (`id`, `title`, `name`, `username`, `email`, `password`, `address`, `contact`, `city`, `zip`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
+(69, '1585298137-ed.jpg', 'Ed sherran', 'Edy', 'amanmool384@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-26 12:14:42', 0, 1, '2020-03-27 15:10:44', 1),
+(71, '1585300970-aman.png', 'Amanmool', 'amanmool10', 'amanmool03@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-27 09:22:50', 0, 1, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `delivery_boy1`
+--
+
+CREATE TABLE `delivery_boy1` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -95,10 +168,10 @@ CREATE TABLE `delivery_boy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `delivery_boy`
+-- Dumping data for table `delivery_boy1`
 --
 
-INSERT INTO `delivery_boy` (`id`, `name`, `username`, `email`, `password`, `user_type`, `secret_key`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
+INSERT INTO `delivery_boy1` (`id`, `name`, `username`, `email`, `password`, `user_type`, `secret_key`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
 (3, 'zenish prajapati', 'izenish', 'zenish77@gmail.com', 'Nepal123', 'super_admin', NULL, NULL, 1, '2020-03-14 14:01:15', 0, 1, NULL, 1),
 (14, '', 'aman', 'test@yahoo.com', '202cb962ac59075b964b07152d234b70', 'normal_user', NULL, NULL, 1, '2019-07-28 14:13:58', 1, 1, '2020-03-14 19:35:02', 1),
 (18, '', 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', NULL, 1, '2019-07-30 16:25:01', 1, 1, '2019-07-30 22:11:17', 1);
@@ -157,6 +230,23 @@ INSERT INTO `item` (`id`, `gas_name`, `purpose`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `map`
+--
+
+CREATE TABLE `map` (
+  `location` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `map`
+--
+
+INSERT INTO `map` (`location`) VALUES
+('<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.5294059481016!2d85.42990101505737!3d27.670027933737895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1aae9c06cdc7%3A0xf12112babca2e0d5!2sBhaktapur%20No.7%20Ward%20Office%2C%20Golmadhi!5e0!3m2!1sen!2snp!4v1585470344859!5m2!1sen!2snp\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `message`
 --
 
@@ -174,6 +264,40 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id`, `name`, `email`, `message`, `status`, `cr_date`) VALUES
+(35, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
+(37, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
+(38, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
+(39, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
+(40, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
+(41, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
+(42, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
+(43, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
+(44, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
+(45, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
+(46, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
+(47, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
+(48, 'Raju', 'raju@gmail.com', 'whats up.....', 0, '2020-03-29 01:10:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message1`
+--
+
+CREATE TABLE `message1` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT 0,
+  `cr_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message1`
+--
+
+INSERT INTO `message1` (`id`, `name`, `email`, `message`, `status`, `cr_date`) VALUES
 (33, 'aman', 'masmas@gmail.com', 'alsfkjsk', 1, '2020-03-14 12:52:30'),
 (34, 'Manisha', 'gora@yahoo.com', 'Great efforts!', 1, '2020-03-14 02:39:39'),
 (35, 'Jenish Prajapati', 'zenish77@gmail.com', 'Wow!!!', 1, '2020-03-14 02:39:59'),
@@ -284,9 +408,52 @@ INSERT INTO `stove` (`id`, `title`, `content`, `author`, `featured_image`, `stoc
 (3, 'Tri-Stove', '', '', 'stove3.png', '50', 6250),
 (4, 'Quad Burner', '', '', 'stove4.png', '50', 7777);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `view_stats`
+--
+
+CREATE TABLE `view_stats` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `date` date DEFAULT NULL,
+  `page_views` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `view_stats`
+--
+
+INSERT INTO `view_stats` (`id`, `date`, `page_views`) VALUES
+(1, '2020-03-19', 8),
+(2, '2020-03-20', 5),
+(3, '2020-03-21', 2),
+(4, '2020-03-22', 8),
+(5, '2020-03-23', 15),
+(6, '2020-03-24', 1),
+(7, '2020-03-25', 1),
+(9, '2020-03-26', 2),
+(10, '2020-03-27', 3),
+(11, '2020-03-29', 12),
+(12, '2020-04-10', 1),
+(13, '2020-04-16', 2),
+(14, '2020-07-16', 6),
+(15, '2020-07-26', 6),
+(16, '2020-11-06', 6);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `verifiedby_id` (`verifiedby_id`),
+  ADD KEY `postby_id` (`postby_id`);
 
 --
 -- Indexes for table `customer`
@@ -301,6 +468,16 @@ ALTER TABLE `customer`
 -- Indexes for table `delivery_boy`
 --
 ALTER TABLE `delivery_boy`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `verifiedby_id` (`verifiedby_id`),
+  ADD KEY `postby_id` (`postby_id`);
+
+--
+-- Indexes for table `delivery_boy1`
+--
+ALTER TABLE `delivery_boy1`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`),
   ADD UNIQUE KEY `username` (`username`),
@@ -326,6 +503,12 @@ ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `message1`
+--
+ALTER TABLE `message1`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -344,19 +527,37 @@ ALTER TABLE `stove`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `view_stats`
+--
+ALTER TABLE `view_stats`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `customer_id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT for table `delivery_boy`
 --
 ALTER TABLE `delivery_boy`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT for table `delivery_boy1`
+--
+ALTER TABLE `delivery_boy1`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
@@ -375,6 +576,12 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `message1`
+--
+ALTER TABLE `message1`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
@@ -394,6 +601,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `stove`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `view_stats`
+--
+ALTER TABLE `view_stats`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
