@@ -1,4 +1,5 @@
    <?php
+   error_reporting(0);
   $msg = "";
   $msg_class = "";
   $msg1="";
@@ -7,8 +8,10 @@
  if($conn)
  {
   // echo "<br><br><br>string<br>";
+  // echo $prev_data['id'];
   // exit();
  }
+
 
   if (isset($_POST['add_deliveryStaff'])) {
       
@@ -19,6 +22,8 @@
       $address = $_POST['address'];
       $state = $_POST['state'];
       $zip = $_POST['zip_code'];
+
+      $user_id = $prev_data['id'];
   //     echo "<br><br><br>string<br>";
   // exit();
         // print_r($_FILES["profileImage"];
@@ -103,7 +108,7 @@
     else
     {
       $conn = mysqli_connect("localhost", "root", "", "notify");
-             $sql = "UPDATE `delivery_boy` SET `title` = '$profileImageName',`name`='$name',`username`='$u',`email`='$e',`address`='$address',`city`='$state',`contact`='$phone' WHERE `id`='$user_id'";
+             $sql = "UPDATE `admin` SET `title` = '$profileImageName',`name`='$name',`username`='$u',`email`='$e',`address`='$address',`city`='$state',`contact`='$phone' WHERE `id`='$user_id'";
 // echo "<br><br >".$profileImageName;
 // echo "<pre>";print_r($_FILES['profileImage']);exit;
 

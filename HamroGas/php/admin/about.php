@@ -15,6 +15,9 @@ include("include/header.php");
 
 $uu=($_SESSION['username']);
 
+//  $user_id = @$_GET['id'];
+// echo('<br><br><br><br><br><br><br><br> &nspb&nspb&nspb&nspb'.$user_id);
+// echo('<br><br><br><br><br><br><br><br>               '+ $user_id);
 
 require_once("connection.php");
 $sql = "SELECT * FROM `admin` WHERE `username`='$uu'";
