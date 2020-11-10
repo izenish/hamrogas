@@ -1,6 +1,25 @@
+
+  <?php
+// echo $_COOKIE["member_login"];exit;
+if(empty($_SESSION)) // if the session not yet started
+   session_start();
+
+if(!isset($_SESSION['username'])) { 
+  echo "<script>window.location='../login/admin_signIn.php';</script>";
+  exit;
+}
+?>
+
 <?php 
+
 include_once('connection.php');
+if($conn){
+  $uu=($_SESSION['username']);
+  // echo "string". $uu;
+  // exit();
+  }
  ?>
+
 
 
 <!DOCTYPE html>
@@ -174,7 +193,7 @@ include_once('connection.php');
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <!-- <i class="fas fa-user-shield"></i> -->
           <?php 
-             $sql = "SELECT * FROM `admin`";
+             $sql = "SELECT * FROM `admin` WHERE `username` ='$uu'";
              $result = mysqli_query($conn,$sql);
              $row = mysqli_fetch_assoc($result);
              // echo $row['title'];
