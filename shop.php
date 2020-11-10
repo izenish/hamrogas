@@ -249,8 +249,12 @@ include "include/dbconnect.php";
           <?php }
           ?>
           <?php if($row['stock']<10&&$row['stock']>0)
-              { ?>
-              <a class="btn btn-warning text-light" href="stripe_integration_php/checkout.php" > Limited Stock! Buy Now </a> &nbsp;
+              { $e=$row['gas_id'];
+                $f=$row['title'];
+
+                ?>
+                
+              <a class="btn btn-warning text-light" href="stripe_integration_php/checkout.php?id=<?= $e ?> && gas=<?= $f ?> " > Limited Stock! Buy Now </a> &nbsp;
               <?php 
               }
               ?>

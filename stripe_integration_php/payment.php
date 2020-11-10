@@ -10,12 +10,17 @@ require_once("DBConnect.php");
 $sql1 = "SELECT * FROM `customer` WHERE `email`= '$gmail'";
 $result1 = mysqli_query($conn, $sql1);
 $row1 = mysqli_fetch_assoc($result1);
+$t=$row1['item'];
+
+$sql2 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
+$result2 = mysqli_query($conn, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
     
     $quantity=$row1['quantity'];
     $cid=$row1['customer_id'];
     //echo $row1['quantity'];
     // Convert price to cents 
-    $itemPrice = ($itemPrice*$quantity*100); 
+    $itemPrice = ($row2['exc_price']*$quantity*100); 
  //--------------------------------------------------------------
  
 //-------itemname------

@@ -5,22 +5,24 @@ $gmail= @$_GET['id'];
 
 require_once("dbConnect.php");
 
+// to get the details of customer order
 $sql = "SELECT * FROM `customer` WHERE `email`= '$gmail'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 //$data = mysqli_num_rows($result);
  //echo "<pre>"; print_r($result); 
+$t=$row['item'];
+
+// to get the price of gas
+$sql2 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
+$result2 = mysqli_query($conn, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
 
 $itemName = $row['item'];
 // echo $itemName;
 // echo "what";
 
-$sql1 = "SELECT * FROM `item` WHERE `gas_name`= '$itemName'";
-$result1 = mysqli_query($conn, $sql1);
-$row1 = mysqli_fetch_assoc($result1);
-$itemNumber = $row1['purpose']; 
-// echo $itemNumber;
-$itemPrice = 1375; 
+$itemPrice = $row2['exc_price']; 
 $currency = "NPR";
 ?>
  <?php
@@ -105,9 +107,6 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
     	display: none;
     }
 }
-
-
-
 
 	</style>
 </head>
@@ -214,7 +213,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
 
 </div>
     <div class="p-2 "><span class="rounded border border-success px-2 py-1"><?= $row['quantity']; ?></span></div>
-    <div class="p-2 ">Rs.1000</div>
+    <div class="p-2 "><?=$row2['exc_price']?></div>
   </div>
 				    
 					
@@ -226,7 +225,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
     <div class="px-3">Subtotal</div>
     
     <div class="px-3 "><?php 
-                        $stotal=($row['quantity'])*1000;
+                        $stotal=($row['quantity'])*($row2['exc_price']);
                     echo $stotal ?></div>
   </div>
   <div class="d-flex justify-content-between text-muted mb-3">
@@ -238,11 +237,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
     <div class="px-3">Total</div>
     
     <div class="px-3 "><b><?php echo "Rs.".$stotal ?></b></div>
-  </div>
-
-				
-
-				
+  </div>	
 				<hr size="1" class="w-100 mb-3">
 			</div>
 
