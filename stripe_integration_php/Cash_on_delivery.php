@@ -8,6 +8,12 @@ require_once("dbConnect.php");
 $sql = "SELECT * FROM `customer` WHERE `email`= '$gmail'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
+
+$t=$row['item'];
+
+$sql1 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
+$result1 = mysqli_query($conn, $sql1);
+$row1 = mysqli_fetch_assoc($result1);
 ?>
 
 
@@ -40,7 +46,7 @@ $row = mysqli_fetch_assoc($result);
 
 	</style>
 			<body>
-			<div class="text-center  p-5 mb-4 bg-white mx-auto" style="width:500px">	
+			<div class="text-center  p-5 mb-4 bg-white mx-auto" style="width:580px">	
 				<div class="container-sm bg-light p-5 border border-light rounded-lg shadow-lg">
 				<h4>YOUR ORDER</h4>
 				<hr size="1" class="w-100 mb-3">
@@ -57,7 +63,7 @@ $row = mysqli_fetch_assoc($result);
 
 </div>
     <div class="p-2 "><span class="rounded border border-dark px-2 py-1"><?= $row['quantity']; ?></span></div>
-    <div class="p-2 ">Rs.1000</div>
+    <div class="p-2 "><?= $row1['exc_price']?></div>
   </div>
 				    
 					
@@ -69,7 +75,7 @@ $row = mysqli_fetch_assoc($result);
     <div class="px-3">Subtotal</div>
     
     <div class="px-3 "><?php 
-                        $stotal=($row['quantity'])*1000;
+                        $stotal=($row['quantity'])*($row1['exc_price']);
                     echo $stotal ?></div>
   </div>
   <div class="d-flex justify-content-between text-muted mb-3">

@@ -13,7 +13,5 @@ define('DB_NAME', 'notify');
 
 // Product Details 
 // Minimum amount is $0.50 US 
-$itemName = "GAS"; 
 $itemNumber = "2"; 
-$itemPrice = 1375; 
 $currency = "NPR"; 

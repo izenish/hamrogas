@@ -1,4 +1,7 @@
-  <?php
+   <?php
+  $gmail= @$_GET['id'];
+  $gasname= @$_GET['gas'];
+
   error_reporting(0);
 
   if (isset($_POST['add_order'])) {
@@ -151,8 +154,12 @@ require_once("DBConnect.php");
 
 $sql = "SELECT purpose FROM `item` WHERE 1 Limit 0, 10";
 $result = mysqli_query($conn, $sql);
-$sql1 = "SELECT gas_name FROM `item` WHERE 1 Limit 0, 10";
+// $data = mysqli_num_rows($result);
+//   echo "<pre>"; print_r($result); 
+$sql1 = "SELECT title FROM `gas_cylinders` WHERE stock>='5'";
 $result1 = mysqli_query($conn, $sql1);
+// $data = mysqli_num_rows($result1);
+//   echo "<pre>"; print_r($result1);
 $sql2 = "SELECT type FROM `item` WHERE 1 Limit 0, 10";
 $result2 = mysqli_query($conn, $sql2);
   //$data = mysqli_num_rows($result);
@@ -394,8 +401,8 @@ function showPosition(position) {
                 while($row = mysqli_fetch_assoc($result1)) {
               // echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["email"]. "<br>";
                   ?>
-                  <option value="<?= $row["gas_name"];?>">
-                   <?= $row["gas_name"];?>
+                  <option value="<?= $row["title"];?>">
+                   <?= $row["title"];?>
                  </option>
 
                  <?php
