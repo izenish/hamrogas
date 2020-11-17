@@ -41,7 +41,7 @@
 
 
   <div class="main_body"> 
- <div class="sidebar_menu">
+    <div class="sidebar_menu">
           <div class="inner__sidebar_menu">
 
             <ul>
@@ -70,7 +70,7 @@
                       <span class="icon"><i class="fas fa-users"></i></span>     
                       <span class="list">UnDelivered list</span>
                     </a>
-                    <a href="pending.php" >
+                     <a href="pending.php" >
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Unverified List</span>
                       </a>
@@ -79,7 +79,8 @@
                         <span class="list">Delivered List</span>
                       </a>
                   </div>
-                       <li>
+              
+                  <li>
                 <a href="product.php">
                   <span class="icon"><i class="far fa-comments"></i></span>
                   <span class="list">Product</span>
@@ -161,6 +162,7 @@
           </div>
       </div>
 
+
          <div class="container">
 
 <nav aria-label="breadcrumb" style="margin-bottom: 25px;">
@@ -187,7 +189,7 @@
             <th scope="col">Stock</th>
             <th scope="col">Purpose</th>
             <th scope="col">Type</th>
-            <th scope="col">contetn</th>
+            <th scope="col">content</th>
             <th scope="col">User</th>
             <th scope="col">Email</th>
             <!-- <th scope="col">Price</th> -->
@@ -197,7 +199,7 @@
         <tbody>
           <?php 
       $sn=1;
-     $sql = mysqli_query($conn,"SELECT * FROM Product");
+     $sql = mysqli_query($conn,"SELECT * FROM gas_cylinders");
      
     
 
@@ -210,20 +212,20 @@
      ?>
           <tr>
             <th scope="row"><?php echo $sn++; ?></th>
-            <td style="text-align: center;"><img style="width: 80px; border: 1px solid #eee;" src="images/<?= $main_result['image'];?>" alt="Thumb"></td>
-            <td><?php echo $main_result['Name'];?></td>
-            <td><?php echo $main_result['Price']; ?></td>
+            <td style="text-align: center;"><img style="width: 80px; border: 1px solid #eee;" src="../../../images/products/<?= $main_result['featured_image'];?>" alt="Thumb"></td>
+            <td><?php echo $main_result['title'];?></td>
+            <td><?php echo $main_result['exc_price']; ?></td>
             <td><?php echo $main_result['stock']; ?></td>
             <td><?php echo $main_result['purpose']; ?></td>
             <td><?php echo $main_result['type']; ?></td>
-            <td><?php echo $main_result['Content']; ?></td>
+            <td><?php echo $main_result['content']; ?></td>
             <td><?php echo $main_result['user_name']; ?></td>
             <td><?php echo $main_result['email']; ?></td>
                       <!-- <td><?php// echo $main_result['item_price']; ?></td> -->
             
          <!--    <td><a href="delete.php?id=<?php// echo($main_result['id']);?>" class="text-danger"><i
                   class="fas fa-trash-alt"></i></a></td> -->
-                <td align="center"><a onclick="confirm(<?php echo($main_result['id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="fas fa-trash-alt"></i></a></td> 
+                <td align="center"><a onclick="confirm(<?php echo($main_result['gas_id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="fas fa-trash-alt"></i></a></td> 
 
           </tr>
           <?php }

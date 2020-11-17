@@ -225,7 +225,7 @@
             
          <!--    <td><a href="delete.php?id=<?php// echo($main_result['id']);?>" class="text-danger"><i
                   class="fas fa-trash-alt"></i></a></td> -->
-                <td align="center"><a onclick="confirm(<?php echo($main_result['id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="fas fa-trash-alt"></i></a></td> 
+                <td align="center"><a onclick="confirm(<?php echo($main_result['gas_id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="fas fa-trash-alt"></i></a></td> 
 
           </tr>
           <?php }
