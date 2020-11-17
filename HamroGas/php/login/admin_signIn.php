@@ -11,6 +11,7 @@
 
     <script type="text/javascript">
     function confirm(){
+     
               Swal.fire({
                   title: 'Are you sure?',
                   text: "Do you sure want to go to recover page??",
@@ -21,6 +22,9 @@
                   confirmButtonText: 'Yes, Recover now'
                 }).then((result) => {
                   if (result.value) {
+                    //////////setting cookie for the admin//////////////////////
+                    // document.cookie ="value=1; expires=time()"
+
                    // 
                     window.location.href = ('forget.php');
                   }
@@ -50,8 +54,8 @@ if(isset($_POST['add_deliveryBoy'])){
 // echo "$u.$p";exit();
 
 	$sql = "SELECT * FROM `admin` WHERE (`username`='$u') AND `password`='$p' AND `status`=1 AND `is_verified`=1;";
-	//echo $sql;
-	require_once('../admin/Connection.php');
+	// echo $sql;
+	require_once('Connection.php');
 	$result = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($result) > 0) {
 		// echo "Login Successful";exit;

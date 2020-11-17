@@ -42,7 +42,7 @@ $prev_data = mysqli_fetch_assoc($result);
                 </a>
               </li>
               <li>
-                <a href="#" class="">
+                <a href="charts.php" class="">
                   <span class="icon"><i class="fas fa-chart-pie"></i></span>
                   <span class="list">Charts</span>
                 </a>

@@ -75,9 +75,9 @@
                     Login
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="HamroGas/php/staff/index.php">Delivery Boy</a>
+                    <a class="dropdown-item" href="HamroGas/php/login/staff_signin.php">Delivery Boy</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="HamroGas/php/admin/index.php">Admin</a>
+                    <a class="dropdown-item" href="HamroGas/php/login/admin_signIn.php">Admin</a>
                 </div>
             </li>
           </ul>
@@ -95,7 +95,17 @@
                     <li><a  class="nav-link smooth-scroll" href="#team">Team</a></li>
                     <li><a  class="nav-link smooth-scroll" href="#services">Services</a></li>
                     <li><a class="nav-link smooth-scroll"  href="#contact">Contact</a></li>
-                    <li><a class="nav-link "  href="php/login/signIn.php">Login</a></li>
+                            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="HamroGas/php/login/staff_signin.php">Delivery Boy</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="HamroGas/php/login/admin_signIn.php">Admin</a>
+                </div>
+            </li>
                     
                     
                 </ul>

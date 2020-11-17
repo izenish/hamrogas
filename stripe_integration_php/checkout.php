@@ -142,7 +142,8 @@ echo $e;
       header("Location: order_confirmcode.php?id=$e");
     }
   } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "<script>alert('please enter another email address')</script> ";
+    // header("location:'checkout.php'");
   }
   mysqli_close($conn);
 }

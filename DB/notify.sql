@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2020 at 08:25 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Generation Time: Nov 17, 2020 at 08:07 AM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,16 +45,38 @@ CREATE TABLE `admin` (
   `is_verified` tinyint(1) DEFAULT 0,
   `verifiedby_id` int(6) DEFAULT 1,
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `status` tinyint(1) DEFAULT 1
+  `status` tinyint(1) DEFAULT 1,
+  `value` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `title`, `name`, `username`, `email`, `password`, `address`, `contact`, `city`, `zip`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
-(22, '1604647247-logoLight.JPG', 'admin', 'admin', 'admin@amin.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 123456789, 'admin', 90001, 'admin', 1, '2020-03-06 07:16:16', 1, 1, '2020-11-06 13:05:47', 1),
-(71, '1585573172-ed.jpg', 'Amanmool', 'amanmool10', 'amanmool03@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-27 09:22:50', 1, 1, '2020-03-30 18:44:32', 1);
+INSERT INTO `admin` (`id`, `title`, `name`, `username`, `email`, `password`, `address`, `contact`, `city`, `zip`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`, `value`) VALUES
+(9, 'Screenshot (200).png', 'ma', 'manis', 'm@gmail.com', '202cb962ac59075b964b07152d234b70', 'bhaktapur', 9865741234, 'bhaktapur', 0, NULL, 1, '2020-11-08 14:59:51', 1, 1, '2020-11-16 15:36:05', 1, 1),
+(71, '1585573172-ed.jpg', 'Amanmool', 'amanmool10', 'amanmool03@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-27 09:22:50', 1, 1, '2020-03-30 18:44:32', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `confirm`
+--
+
+CREATE TABLE `confirm` (
+  `id` int(11) NOT NULL,
+  `c_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `code` mediumint(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `confirm`
+--
+
+INSERT INTO `confirm` (`id`, `c_id`, `email`, `code`) VALUES
+(104, 131, 'kevin@gmail.com', 15),
+(105, 10012, 'm.hyongoju04@gmail.com', 15);
 
 -- --------------------------------------------------------
 
@@ -91,24 +113,41 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `email`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`, `first_name`, `last_name`, `address`, `phone_number`, `item`, `payment`, `purpose`, `quantity`, `profile`, `citizenship_card`, `code`, `latitude`, `longitude`) VALUES
-(131, 'kevin@gmail.com', 1, '2020-08-30 11:10:45', 0, 1, NULL, 1, 'kwvin', 'kook', 'dadeldura', 1234567899, 'HP GAS', 'Pay Online', 'comercial', 5, 'gas1.jpg', 'gas5.jpg', 637815, '27.68240640', '85.33114880'),
-(132, 'orera52@gmail.com', 1, '2020-08-30 11:19:08', 0, 1, NULL, 1, 'treat', 'trea', 'surya', 1234567890, 'HP GAS', 'Pay Online', 'domestic', 1, 'gas1.jpg', 'gas3.jpg', 503564, '27.68240640', '85.33114880'),
-(133, 'kookiea_gora@hotmail.com', 1, '2020-09-03 02:58:57', 0, 1, NULL, 1, 'kookie ', 'hyung', 'suryabinayak', 2147483647, 'HP GAS', 'Pay Online', 'comercial', 1, 'Screenshot (430).png', 'Screenshot (431).png', 640923, '0.00000000', '0.00000000'),
-(135, 'kookssiea_gora@hotmail.com', 1, '2020-09-03 03:00:12', 0, 1, NULL, 1, 'kookie ', 'hyung', 'se', 2147483647, 'HP GAS', 'Pay Online', 'comercial', 4, 'Screenshot (430).png', 'Screenshot (431).png', 131778, '0.00000000', '0.00000000'),
-(136, 'monikaddgora52@gmail.com', 1, '2020-09-03 03:02:01', 0, 1, NULL, 1, 'kookkk', 'koookor', 'st', 1234567890, 'HP GAS', 'Pay Online', 'comercial', 1, 'Screenshot (434).png', 'Screenshot (435).png', 551259, '0.00000000', '0.00000000'),
-(137, 'monikagoddddddra52@gmail.comd', 1, '2020-10-19 02:19:42', 0, 1, NULL, 1, 'hui', 'tui', 'suryabinayak ', 1234567890, 'HP GAS', 'COD', 'comercial', 4, 'Screenshot (428).png', 'Screenshot (429).png', 689471, '27.66368660', '85.42988140'),
-(139, 'monikassgoddddddra52@gmail.comd', 1, '2020-10-19 02:28:48', 0, 1, NULL, 1, 'hui', 'tui', 'asaa', 1234567890, 'HP GAS', 'Pay Online', 'comercial', 3, 'Screenshot (428).png', 'Screenshot (429).png', 932468, '0.00000000', '0.00000000'),
-(140, 'zenish77@gmail.com', 1, '2020-11-06 06:07:38', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'rammandir', 2147483647, 'HP GAS', 'COD', 'domestic', 2, 'DSC_0672.jpg', 'DSC_0672.jpg', 588022, '27.66659620', '85.42766970'),
-(141, 'aaman@gmail.com', 1, '2020-11-06 06:16:45', 0, 1, NULL, 1, 'aman', 'moool', 'golmadi', 2147483647, 'HP GAS', 'Pay Online', 'domestic', 1, '1195247805040623617.jpg', 'b2.jpg', 964467, '27.65875250', '85.32471830'),
-(144, 'makdmksdf@gmail.com', 1, '2020-11-06 06:20:47', 0, 1, NULL, 1, 'manisha', 'gora', 'nepal', 2147483647, 'HP GAS', 'Pay Online', 'comercial', 1, 'macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-2020-2880x1800-1455.jpg', 'gas4.jpg', 424699, '27.65875250', '85.32471830'),
-(145, 'zenish737@gmail.com', 1, '2020-11-06 06:24:37', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'ssmsms', 2147483647, 'HP GAS', 'COD', 'comercial', 1, 'andrej-lisakov-V2OyJtFqEtY-unsplash.jpg', 'andrej-lisakov-V2OyJtFqEtY-unsplash (1).jpg', 104450, '27.65875250', '85.32471830'),
-(146, 'zenish7337@gmail.com', 1, '2020-11-06 06:27:33', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'dfdfdf', 2147483647, 'HP GAS', 'Pay Online', 'domestic', 1, 'andrej-lisakov-V2OyJtFqEtY-unsplash.jpg', 'andrej-lisakov-V2OyJtFqEtY-unsplash (1).jpg', 243523, '27.66659190', '85.42765530'),
-(147, 'zenish73327@gmail.com', 1, '2020-11-06 06:29:21', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nnnnn', 2147483647, 'HP GAS', 'COD', 'comercial', 1, '1195247805040623617.jpg', '1195247805040623617.jpg', 445386, '27.65875250', '85.32471830'),
-(148, 'lat@long.com', 1, '2020-11-09 05:30:25', 0, 1, NULL, 1, 'lat', 'long', 'nepal', 2147483647, 'Subhidha gas', 'COD', 'comercial', 3, 'aa.jpg', '1.jpg', 923858, '27.65875250', '85.32471830'),
-(149, 'chel@ckehr.com', 1, '2020-11-09 06:09:04', 0, 1, NULL, 1, 'check', 'checl', 'nepal', 2147483647, 'HP GAS', 'COD', 'comercial', 1, '1.jpg', 'aa.jpg', 184337, '27.65875250', '85.32471830'),
-(154, '740317@khec.edu.np', 1, '2020-11-09 06:28:24', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nepal', 2147483647, 'HP GAS', 'COD', 'domestic', 1, 'aa.jpg', 'aa.jpg', 923358, '27.65875250', '85.32471830'),
-(158, 'manishagora52@gmail.com', 1, '2020-11-09 06:47:22', 0, 1, NULL, 1, 'sdsdsdsdsd', 'sdsds', 'nepal', 2147483647, 'HP GAS', 'COD', 'comercial', 1, 'aa.jpg', '1.jpg', 482444, '27.66658530', '85.42767250'),
-(163, 'amanmool384@gmail.com', 1, '2020-11-09 07:10:58', 0, 1, NULL, 1, 'Jenish', 'Prajapati', 'nepal', 2147483647, 'HP GAS', 'COD', 'comercial', 1, 'aa.jpg', 'aa.jpg', 531599, '27.65875250', '85.32471830');
+(131, 'kevin@gmail.com', 1, '2020-08-30 11:10:45', 0, 1, '2020-11-16 15:28:28', 1, 'kwvin', 'kook', 'dadeldura', 1234567899, 'HP GAS', 'Pay Online', 'comercial', 5, '1604998571-1585573172-ed.jpg', 'gas5.jpg', 637815, '27.68240640', '85.33114880'),
+(132, 'orera52@gmail.com', 1, '2020-08-30 11:19:08', 0, 1, '2020-11-16 15:28:38', 1, 'treat', 'trea', 'surya', 1234567890, 'HP GAS', 'Pay Online', 'domestic', 1, '1604998571-1585573172-ed.jpg', 'gas3.jpg', 503564, '27.68240640', '85.33114880');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `delivered`
+--
+
+CREATE TABLE `delivered` (
+  `id` int(11) NOT NULL,
+  `C_id` int(11) NOT NULL,
+  `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` int(11) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `item` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(3) NOT NULL,
+  `purpose` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  `Delivered_date` datetime NOT NULL,
+  `Confirmed_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `profile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `longitude` decimal(12,8) NOT NULL,
+  `latitude` decimal(12,8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `delivered`
+--
+
+INSERT INTO `delivered` (`id`, `C_id`, `name`, `email`, `address`, `contact`, `item`, `payment`, `quantity`, `purpose`, `date`, `Delivered_date`, `Confirmed_date`, `profile`, `longitude`, `latitude`) VALUES
+(31, 10011, 'mani', 'm.hyongoju04@gmail.com', 0, 2147483647, 'NEPAL GAS', 'COD', 1, 'domestic', '2020-11-16 12:53:00', '2020-11-16 12:55:31', '2020-11-16 15:32:54', 'IMG_20200420_163656.jpg', '85.33330000', '27.66670000'),
+(32, 10012, 'manish', 'm.hyongoju04@gmail.com', 0, 2147483647, 'NEPAL GAS', 'COD', 1, 'domestic', '2020-11-17 12:42:56', '2020-11-17 12:44:50', '2020-11-17 12:45:01', 'bg.jpg', '85.33330000', '27.66670000');
 
 -- --------------------------------------------------------
 
@@ -133,48 +172,18 @@ CREATE TABLE `delivery_boy` (
   `is_verified` tinyint(1) DEFAULT 0,
   `verifiedby_id` int(6) DEFAULT 1,
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `status` tinyint(1) DEFAULT 1
+  `status` tinyint(1) DEFAULT 1,
+  `value` int(11) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `delivery_boy`
 --
 
-INSERT INTO `delivery_boy` (`id`, `title`, `name`, `username`, `email`, `password`, `address`, `contact`, `city`, `zip`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
-(69, '1585298137-ed.jpg', 'Ed sherran', 'Edy', 'amanmool384@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-26 12:14:42', 0, 1, '2020-03-27 15:10:44', 1),
-(71, '1585300970-aman.png', 'Amanmool', 'amanmool10', 'amanmool03@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-27 09:22:50', 0, 1, NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `delivery_boy1`
---
-
-CREATE TABLE `delivery_boy1` (
-  `id` int(6) UNSIGNED NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_type` enum('normal_user','admin','super_admin','guest') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'normal_user',
-  `secret_key` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `remarks` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `postby_id` int(6) DEFAULT 1,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `is_verified` tinyint(1) DEFAULT 0,
-  `verifiedby_id` int(6) DEFAULT 1,
-  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `status` tinyint(1) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `delivery_boy1`
---
-
-INSERT INTO `delivery_boy1` (`id`, `name`, `username`, `email`, `password`, `user_type`, `secret_key`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`) VALUES
-(3, 'zenish prajapati', 'izenish', 'zenish77@gmail.com', 'Nepal123', 'super_admin', NULL, NULL, 1, '2020-03-14 14:01:15', 0, 1, NULL, 1),
-(14, '', 'aman', 'test@yahoo.com', '202cb962ac59075b964b07152d234b70', 'normal_user', NULL, NULL, 1, '2019-07-28 14:13:58', 1, 1, '2020-03-14 19:35:02', 1),
-(18, '', 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', NULL, 1, '2019-07-30 16:25:01', 1, 1, '2019-07-30 22:11:17', 1);
+INSERT INTO `delivery_boy` (`id`, `title`, `name`, `username`, `email`, `password`, `address`, `contact`, `city`, `zip`, `remarks`, `postby_id`, `created_at`, `is_verified`, `verifiedby_id`, `updated_at`, `status`, `value`) VALUES
+(69, '1585298137-ed.jpg', 'Ed sherran', 'Edy', 'amanmool384@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-26 12:14:42', 0, 1, '2020-03-27 15:10:44', 1, 0),
+(71, '1585300970-aman.png', 'Amanmool', 'amanmool10', 'amanmool03@gmail.com', '202cb962ac59075b964b07152d234b70', 'Golmadi', 9860916619, 'Bhaktapur', 10001, NULL, 1, '2020-03-27 09:22:50', 0, 1, NULL, 1, 0),
+(81, '', 'ma', 'manish', 'm.hyongoju04@gmail.com', '59c95189ac895fcc1c6e1c38d067e244', 'Bhaktapur', 9862265465, 'bhaktapur', 1001, NULL, 1, '2020-11-08 04:22:17', 0, 1, '2020-11-17 11:30:44', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -190,18 +199,26 @@ CREATE TABLE `gas_cylinders` (
   `featured_image` varchar(255) NOT NULL,
   `exc_price` smallint(6) NOT NULL,
   `new_price` smallint(6) NOT NULL,
-  `stock` int(11) NOT NULL
+  `stock` int(11) NOT NULL,
+  `purpose` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `gas_cylinders`
 --
 
-INSERT INTO `gas_cylinders` (`gas_id`, `title`, `content`, `author`, `featured_image`, `exc_price`, `new_price`, `stock`) VALUES
-(1, 'SHREE GAS', '15L of SHREE domestic gas. Not for Commercial Use', '', 'gas3.jpg', 1350, 4000, 0),
-(2, 'NEPAL GAS', '15L of NEPAL Gas domestic gas. Not for Commercial Use', '', 'gas1.jpg', 1350, 4000, 50),
-(3, 'HIMAL GAS', '15L of HIMAL domestic gas. Not for Commercial Use', '', 'gas4.jpg', 1350, 4000, 5),
-(4, 'BHERI GAS', '15L of BHERI domestic gas. Not for Commercial Use', '', 'gas2.jpg', 1350, 4000, 50);
+INSERT INTO `gas_cylinders` (`gas_id`, `title`, `content`, `author`, `featured_image`, `exc_price`, `new_price`, `stock`, `purpose`, `type`, `user_name`, `email`) VALUES
+(1, 'SHREE GAS', '15L of SHREE domestic gas. Not for Commercial Use', '', 'gas3.jpg', 1350, 4000, 0, '', '', '', ''),
+(2, 'NEPAL GAS', '15L of NEPAL Gas domestic gas. Not for Commercial Use', '', 'gas1.jpg', 1350, 4000, 50, '', '', '', ''),
+(3, 'HIMAL GAS', '15L of HIMAL domestic gas. Not for Commercial Use', '', 'gas4.jpg', 1350, 4000, 5, '', '', '', ''),
+(4, 'BHERI GAS', '15L of BHERI domestic gas. Not for Commercial Use', '', 'gas2.jpg', 1350, 4000, 50, '', '', '', ''),
+(18, 'NEPAL Gas', 'asfdasdfsd', '', '1605593816-banner2.jpg', 500, 0, 32, 'domestic', 'old', 'ma', 'aslfkj@gmail.com'),
+(19, 'HP GAS', 'dafasdf', '', '1605594691-gas-cylinder.png', 200, 0, 22, 'domestic', 'old', 'safsadf', 'sfsd@gmail.com'),
+(20, 'HP GAS', 'dfdsafasd', '', '1605594878-banner2.jpg', 3123, 0, 32, 'domestic', 'old', 'sdfs', 'sdfa@gmail.com'),
+(21, 'HP GAS', 'asdfsdf', '', '1605596156-stats.jpg', 13, 21, 21, 'domestic', 'old', 'asdf', 'sdsad@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -264,44 +281,15 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id`, `name`, `email`, `message`, `status`, `cr_date`) VALUES
-(35, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
-(37, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
-(38, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
 (39, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
-(40, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
+(40, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 1, '2020-03-27 08:14:24'),
 (41, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
 (42, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
 (43, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
 (44, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
 (45, 'aman', 'amanmool384@gmail.com', 'This is the message for completion of dashboard..', 1, '2020-03-17 11:35:28'),
 (46, 'Zenish', 'zenish12@gmail.com', 'This website is great i love it..', 0, '2020-03-27 08:14:24'),
-(47, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45'),
-(48, 'Raju', 'raju@gmail.com', 'whats up.....', 0, '2020-03-29 01:10:58');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `message1`
---
-
-CREATE TABLE `message1` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(80) NOT NULL,
-  `message` varchar(255) NOT NULL,
-  `status` int(2) NOT NULL DEFAULT 0,
-  `cr_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `message1`
---
-
-INSERT INTO `message1` (`id`, `name`, `email`, `message`, `status`, `cr_date`) VALUES
-(33, 'aman', 'masmas@gmail.com', 'alsfkjsk', 1, '2020-03-14 12:52:30'),
-(34, 'Manisha', 'gora@yahoo.com', 'Great efforts!', 1, '2020-03-14 02:39:39'),
-(35, 'Jenish Prajapati', 'zenish77@gmail.com', 'Wow!!!', 1, '2020-03-14 02:39:59'),
-(36, 'Manish', 'manees@ymail.com', '(y) (y)', 1, '2020-03-14 02:40:23');
+(47, 'duster', 'duster@dust.com', 'This is duster...', 0, '2020-03-27 08:22:45');
 
 -- --------------------------------------------------------
 
@@ -347,16 +335,52 @@ INSERT INTO `orders` (`order_id`, `customer_id`, `name`, `email`, `card_number`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pending`
+--
+
+CREATE TABLE `pending` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_number` int(11) NOT NULL,
+  `item` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `purpose` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` smallint(6) NOT NULL,
+  `profile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `longitude` decimal(12,8) NOT NULL,
+  `latitude` decimal(12,8) NOT NULL,
+  `order_date` datetime NOT NULL,
+  `Delivered_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pending`
+--
+
+INSERT INTO `pending` (`id`, `customer_id`, `name`, `email`, `address`, `phone_number`, `item`, `payment`, `purpose`, `quantity`, `profile`, `longitude`, `latitude`, `order_date`, `Delivered_date`) VALUES
+(52, 10000, 'manish', 'm.hyongoju04@gmail.com', 'Kamalbiniyak', 2147483647, 'NEPAL GAS', 'COD', 'domestic', 2, '1604998574-1585573172-ed.jpg', '85.00000000', '28.00000000', '2020-11-16 10:41:37', '2020-11-16 06:37:26'),
+(53, 10004, 'manish', 'hyongojumanish@gmail.com', 'kamalbiniyak', 2147483647, 'NEPAL GAS', 'COD', 'domestic', 2, '1604998574-1585573172-ed.jpg', '85.33330000', '27.66670000', '2020-11-16 10:46:39', '2020-11-16 07:01:57');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `Name` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `Content` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(10000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `Price` smallint(6) NOT NULL,
+  `purpose` varchar(30) NOT NULL,
   `stock` mediumint(9) NOT NULL,
+  `type` varchar(30) NOT NULL,
   `ADD_Date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -364,23 +388,35 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `Name`, `Content`, `image`, `Price`, `stock`, `ADD_Date`) VALUES
-(17, 'manish', 'slfkdjlk', 'Screenshot (36).png', 0, 10000, '2020-03-13'),
-(18, 'fdlksj', 'lfdaskjlaskdjf', 'Screenshot (36).png', 1500, 1500, '2020-03-13'),
-(19, 'fasf;k', 'f;salfk;l', '7.jpg', 32767, 8388607, '2020-03-13'),
-(20, 'dfak', 'sldkflksd', 'iris-letter-g-embroidery-design.jpg', 432, 234234, '2020-03-13'),
-(21, ';lafsdk;', ';sfldk;lsdf', 'w4306.jpg', 4645, 545454, '2020-03-13'),
-(22, 'ms', 'lskf', 'color.jpg', 150, 1800, '2020-03-14'),
-(23, 'ms', 'lskf', 'color.jpg', 150, 1800, '2020-03-14'),
-(24, 'manish', 'lksfjd', '7.jpg', 32767, 8972, '2020-03-14'),
-(25, 'kjasdjk', 'sldfj', '7.jpg', 32767, 44342, '2020-03-14'),
-(26, 'kjasdjkfsddfisodif', 'sldfjsfoisidijl', '83759881_2604859326234657_8240503062184067072_n.jpg', 3224, 23423, '2020-03-14'),
-(27, 'lkfslkj', 'sdfjlsl', 'Cross-section-sketch-of-the-human-heart.png', 32767, 23423, '2020-03-14'),
-(28, 'lkfslkjwrlkj', 'lwkrjwlke', '7.jpg', 323, 23, '2020-03-14'),
-(29, 'aman', 'mool', 'w4306.jpg', 500, 560, '2020-03-14'),
-(30, 'lskfj1', 'fslkjlksf', 'w4306.jpg', 32232, 3434, '2020-03-14'),
-(31, 'ASFDSDFSADF', 'SDFSDFS', 'defaultimage.jpg', 1500, 500, '2020-03-14'),
-(32, 'asflkd', 'sdfsf', 'defaultimage.jpg', 32767, 323333, '2020-03-14');
+INSERT INTO `product` (`id`, `Name`, `user_name`, `email`, `Content`, `image`, `Price`, `purpose`, `stock`, `type`, `ADD_Date`) VALUES
+(33, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'this is my gas', '1605287250-Screenshot (196).png', 1300, 'domestic', 500, 'old', '2020-11-13'),
+(34, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'this is my gas', '1605287462-Screenshot (196).png', 1300, 'domestic', 500, 'old', '2020-11-13'),
+(35, 'NEPAL Gas', 'manish', 'm.hyongoju04@gmail.com', 'gass', '1605287501-Screenshot (196).png', 5200, 'domestic', 500, 'old', '2020-11-13'),
+(36, 'NEPAL Gas', 'manish', 'm.hyongoju04@gmail.com', 'gass', '1605287548-Screenshot (196).png', 5200, 'domestic', 500, 'old', '2020-11-13'),
+(37, 'NEPAL Gas', 'manish', 'm.hyongoju04@gmail.com', 'gass', '1605287742-Screenshot (196).png', 5200, 'domestic', 500, 'old', '2020-11-13'),
+(38, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605319172-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(39, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605319905-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(40, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605320226-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(41, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605320272-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(42, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605320345-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(43, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605320512-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(44, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605320537-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(45, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'Lpg gas', '1605320605-Screenshot (208).png', 5000, 'comercial', 500, 'old', '2020-11-14'),
+(46, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'manish', '1605332948-Screenshot (206).png', 500, 'domestic', 1000, 'new', '2020-11-14'),
+(47, 'HP GAS', 'manish', 'm.hyongoju04@gmail.com', 'gas', '1605592128-gas-cylinder.png', 500, 'domestic', 500, 'new', '2020-11-17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset`
+--
+
+CREATE TABLE `reset` (
+  `id` int(11) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Code` bigint(20) NOT NULL,
+  `Password` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -438,8 +474,20 @@ INSERT INTO `view_stats` (`id`, `date`, `page_views`) VALUES
 (12, '2020-04-10', 1),
 (13, '2020-04-16', 2),
 (14, '2020-07-16', 6),
-(15, '2020-07-26', 6),
-(16, '2020-11-06', 6);
+(15, '2020-07-26', 8),
+(16, '2020-08-05', 2),
+(17, '2020-08-07', 2),
+(18, '2020-08-08', 13),
+(19, '2020-08-11', 1),
+(20, '2020-11-08', 30),
+(21, '2020-11-09', 5),
+(22, '2020-11-10', 15),
+(23, '2020-11-11', 11),
+(24, '2020-11-12', 14),
+(25, '2020-11-13', 3),
+(26, '2020-11-14', 13),
+(27, '2020-11-15', 3),
+(28, '2020-11-16', 20);
 
 --
 -- Indexes for dumped tables
@@ -456,6 +504,12 @@ ALTER TABLE `admin`
   ADD KEY `postby_id` (`postby_id`);
 
 --
+-- Indexes for table `confirm`
+--
+ALTER TABLE `confirm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
@@ -465,19 +519,15 @@ ALTER TABLE `customer`
   ADD KEY `postby_id` (`postby_id`);
 
 --
+-- Indexes for table `delivered`
+--
+ALTER TABLE `delivered`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `delivery_boy`
 --
 ALTER TABLE `delivery_boy`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD KEY `verifiedby_id` (`verifiedby_id`),
-  ADD KEY `postby_id` (`postby_id`);
-
---
--- Indexes for table `delivery_boy1`
---
-ALTER TABLE `delivery_boy1`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`),
   ADD UNIQUE KEY `username` (`username`),
@@ -503,21 +553,29 @@ ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `message1`
---
-ALTER TABLE `message1`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`);
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `customer_id` (`customer_id`);
+
+--
+-- Indexes for table `pending`
+--
+ALTER TABLE `pending`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reset`
+--
+ALTER TABLE `reset`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -543,28 +601,34 @@ ALTER TABLE `admin`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
+-- AUTO_INCREMENT for table `confirm`
+--
+ALTER TABLE `confirm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+
+--
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `customer_id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10013;
+
+--
+-- AUTO_INCREMENT for table `delivered`
+--
+ALTER TABLE `delivered`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `delivery_boy`
 --
 ALTER TABLE `delivery_boy`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
-
---
--- AUTO_INCREMENT for table `delivery_boy1`
---
-ALTER TABLE `delivery_boy1`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `gas_cylinders`
 --
 ALTER TABLE `gas_cylinders`
-  MODIFY `gas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `gas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -579,22 +643,28 @@ ALTER TABLE `message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `message1`
---
-ALTER TABLE `message1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-
---
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `pending`
+--
+ALTER TABLE `pending`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `reset`
+--
+ALTER TABLE `reset`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `stove`
@@ -606,7 +676,7 @@ ALTER TABLE `stove`
 -- AUTO_INCREMENT for table `view_stats`
 --
 ALTER TABLE `view_stats`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

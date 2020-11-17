@@ -51,7 +51,16 @@ include("include/header.php");
           pointSize: 10,
           colors: ['#1f975b'],
           curveType: 'function',
-          legend: { position: 'bottom' },
+          legend: { position: 'none' },
+           animation: {
+            duration:1000,
+            easing:'inAndOut',
+            startup:true
+          },
+          chartArea:{
+            left:'8%',
+            width:'85%',
+          },
          
 
         };
@@ -78,7 +87,19 @@ include("include/header.php");
         var options = {
           title: 'My Daily Activities',
           pieHole: 0.4,
-          colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6']
+          colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+           animation: {
+            duration:1000,
+            easing:'inAndOut',
+            startup:true
+          },
+          chartArea:
+          {
+            // width: '100%',
+            left: '25%',
+            top:"25%"
+            
+          },
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -86,32 +107,72 @@ include("include/header.php");
       }
     </script>
 
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Weight'],
+          [ 8,      12],
+          [ 4,      5.5],
+          [ 11,     14],
+          [ 4,      5],
+          [ 3,      3.5],
+          [ 6.5,    7]
+        ]);
+
+        var options = {
+          title: 'Age vs. Weight comparison',
+          hAxis: {title: 'Age', minValue: 0, maxValue: 15},
+          vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
+          legend: 'none',
+               animation: {
+            duration:1000,
+            easing:'inAndOut',
+            startup:true
+          },
+         
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
   <div class="main_body"> 
-    <div class="sidebar_menu">
+ <div class="sidebar_menu">
           <div class="inner__sidebar_menu">
 
             <ul>
-              <li >
-                <a href="index.php" >
+              <li>
+                <a href="index.php">
                   <span class="icon">
                     <i class="fas fa-border-all"></i></span>
                   <span class="list">Dashboard</span>
                 </a>
               </li>
+                </li>
+                <li>
+                <a href="List.php">
+                  <span class="icon"><i class="fas fa-comments"></i></span>
+                  <span class="list">List</span>
+                </a>
+              </li>
               <li>
-                <a href="#" style="background: #5343c7; color: #fff;">
+                <a href="charts.php">
                   <span class="icon"><i class="fas fa-chart-pie"></i></span>
                   <span class="list">Charts</span>
                 </a>
-              </li>
-           
+            
+            
               <li>
                 <a href="#">
                   <span class="icon"><i class="fas fa-address-card"></i></span>
                   <span class="list">About</span>
                 </a>
               </li>
+              
             
             </ul>
 
@@ -126,7 +187,6 @@ include("include/header.php");
 
           </div>
       </div>
-
       <div class="container">
         <div class="item_wrap" style="height: 50%;">
           <div class="item" style=" width: 100%; padding: 5px; height: 50vh; ">
@@ -146,7 +206,8 @@ include("include/header.php");
            
         </div>
           <div class="item1" style=" margin-left:1%;width: 48.2%; padding: 5px; height: 50vh; background: #fff;">
-           
+           <div id="chart_div" style="height:100%;
+                      width:100%;"></div>
         </div>
       </div>
 

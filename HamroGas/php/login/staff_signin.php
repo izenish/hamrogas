@@ -22,7 +22,7 @@
                 }).then((result) => {
                   if (result.value) {
                    // 
-                    window.location.href = ('forget.php');
+                    window.location.href = ('forget_staff.php');
                   }
                    // 
                 })
@@ -51,7 +51,7 @@ if(isset($_POST['add_deliveryBoy'])){
 
   $sql = "SELECT * FROM `delivery_boy` WHERE (`username`='$u') AND `password`='$p' AND `status`=1";
   //echo $sql;
-  require_once('../staff/Connection.php');
+  require_once('Connection.php');
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) > 0) {
     // echo "Login Successful";exit;
@@ -145,7 +145,7 @@ if(isset($_POST['add_deliveryBoy'])){
                 </label>
                     <div class="forgot">
                             <!-- <a href="" onclick="confirm();">Forgot Password?</a> -->
-                            <p class="forgot" onclick="confirm();">Forgot Password</p>
+                            <p class="forgot" onclick="confirm(); ">Forgot Password</p>
                     </div> 
                 </div>
 
