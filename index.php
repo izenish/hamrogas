@@ -29,6 +29,7 @@
 
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/598796fa2b.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/12fac56f29.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
@@ -265,7 +266,7 @@
                                 <h3>Mission</h3>
                                 <hr>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    To eradicate the hassle of waiting in queue for gas and taking it home. Simply making your life easier. 
                                 </p>
                             </div>
                         </div>
@@ -275,7 +276,7 @@
                                 <h3>Vision</h3>
                                 <hr>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    To provide the same quality service all over Nepal all the way from the Himalayas to  Terai. 
                                 </p>
                             </div>
                         </div>
@@ -285,7 +286,7 @@
                                 <h3>Motivation</h3>
                                 <hr>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Frequent shortage and unavailability. And also to help u maintain social distancing by avoiding queues to get gas :) 
                                 </p>
                             </div>
                         </div>
@@ -333,9 +334,12 @@
                                 <h5>who we are</h5>
                                 <h3>Meet our <br> <strong>Talented </strong>Team</h3>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quaerat. Reiciendis
-                                aperiam tempore consequuntur vero ullam, nobis culpa quas? Nesciunt repellat veritatis
-                                nemo iusto error? Aliquid nemo earum iure quia?</p>
+                            <p><ul>
+                                <li> <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/amanmool" target="_blank">Aman Mool</a></li>
+                                    <li> <i class="fab fa-instagram"></i><a href="https://www.instagram.com/izenish" target="_blank"> Jenish Prajapati</a> </li>
+                                    <li> <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/maneeshyongoju" target="_blank"> Manees Hyongoju</a></li>
+                                    <li><i class="fab fa-facebook-square"></i><a href="https://www.facebook.com/manisha.gora.9" target="_blank"> Manisha Gora </a></li>
+                            </ul></p>
                         </div>
                     </div>
 
@@ -345,16 +349,16 @@
                         <div id="team-members" class="owl-carousel owl-theme">
                             <!-- first member -->
                             <div class="team-member">
-                                <img src="images/members/ed.jpg" alt="team member" class="img-fluid">
+                                <img src="images/members/r1.jpg" alt="team member" class="img-fluid">
 
                                 <div class="team-member-overlay">
                                     <div class="team-member-info text-center">
-                                        <h6>Ed shreeran</h6>
-                                        <p>Singer </p>
+                                        <h6>Aman Mool</h6>
+                                        <p>Student </p>
                                         <ul class="social-list">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.facebook.com/aman.mool.7" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/AmanMool" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://www.instagram.com/amanmool/" target="_blank"><i class="fab fa-instagram"></i></a></li>
 
                                         </ul>
 
@@ -367,15 +371,15 @@
                             <!-- second member -->
                             <div class="team-member">
 
-                                <img src="images/members/ed.jpg" alt="team member" class="img-fluid">
+                                <img src="images/members/r4.jpg" alt="team member" class="img-fluid">
                                 <div class="team-member-overlay">
                                     <div class="team-member-info text-center">
-                                        <h6>Aman Mool</h6>
-                                        <p>Web Designer</p>
+                                        <h6>Jenish Prajapati</h6>
+                                        <p>Student</p>
                                         <ul class="social-list">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.facebook.com/izenish/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/ZZenish" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://www.instagram.com/izenish/" target="_blank"><i class="fab fa-instagram"></i></a></li>
 
                                         </ul>
 
@@ -388,15 +392,15 @@
                             <!-- Third member -->
                             <div class="team-member">
 
-                                <img src="images/members/ed.jpg" alt="team member" class="img-fluid">
+                                <img src="images/members/r2.jpg" alt="team member" class="img-fluid">
                                 <div class="team-member-overlay">
                                     <div class="team-member-info text-center">
-                                        <h6>Aman Mool</h6>
-                                        <p>Web Designer</p>
+                                        <h6>Manisha Gora</h6>
+                                        <p>Student</p>
                                         <ul class="social-list">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.facebook.com/manisha.gora.9" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter" target="_blank"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram" target="_blank"></i></a></li>
 
                                         </ul>
 
@@ -409,15 +413,15 @@
                             <!-- Fourth member -->
                             <div class="team-member">
 
-                                <img src="images/members/ed.jpg" alt="team member" class="img-fluid">
+                                <img src="images/members/r3.jpg" alt="team member" class="img-fluid">
                                 <div class="team-member-overlay">
                                     <div class="team-member-info text-center">
-                                        <h6>Aman Mool</h6>
-                                        <p>Web Designer</p>
+                                        <h6>Manees Hyongoju</h6>
+                                        <p>Student</p>
                                         <ul class="social-list">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.facebook.com/manish.hyongoju.1" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter" target="_blank"></i></a></li>
+                                            <li><a href="https://www.instagram.com/maneeshyongoju/" target="_blank"><i class="fab fa-instagram"></i></a></li>
 
                                         </ul>
 
@@ -648,7 +652,7 @@
                         <div class="testimonial">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6   col-xs-6 wow fadeIn" data-wow-delay="1s">
-                                    <h3>Quality Support</h3>
+                                    <h3>Absolutely wonderful</h3>
                                 </div>
                                 <div class="col-md-6 col-sm-6  col-xs-6">
                                     <div class="stars text-right">
@@ -660,18 +664,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <p><i class="fas fa-quote-left wow fadeIn"></i> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, assumenda quae,
-                                obcaecati placeat totam aspernatur, dolor incidunt ut dolores doloremque sapiente
-                                nostrum! Eaque, commodi voluptatem modi perspiciatis ut ipsa neque. <i class="fas fa-quote-right"></i></p>
+                            <p><i class="fas fa-quote-left wow fadeIn"></i> We have no regrets! Absolutely wonderful! <i class="fas fa-quote-right"></i></p>
                             <div class="author">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-3  col-xs-6 wow fadeIn">
-                                        <img src="images/members/ed.jpg" alt="clients" class="img-fluid img-circle">
+                                        <img src="images/review/s3.jpg" alt="clients" class="img-fluid img-circle">
                                     </div>
                                     <div class="col-md-10 col-sm-3 col-xs-6 wow fadeIn">
                                         <div class="author-name-des">
-                                            <p>Aman mool</p>
-                                            <p> Web Designer </p>
+                                            <p>Gaurav Shrestha</p>
+                                            <p>-Chef</p>
                                         </div>
                                     </div>
                                 </div>
@@ -694,18 +696,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <p><i class="fas fa-quote-left"></i> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, assumenda quae,
-                                obcaecati placeat totam aspernatur, dolor incidunt ut dolores doloremque sapiente
-                                nostrum! Eaque, commodi voluptatem modi perspiciatis ut ipsa neque. <i class="fas fa-quote-right"></i> </p>
+                            <p><i class="fas fa-quote-left"></i> Hamro Gas Booking saved my business <i class="fas fa-quote-right"></i> </p>
                             <div class="author">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-3 col-xs-6">
-                                        <img src="images/members/ed.jpg" alt="clients" class="img-fluid img-circle">
+                                        <img src="images/review/s2.jpg" alt="clients" class="img-fluid img-circle">
                                     </div>
                                     <div class="col-md-10 col-sm-3 col-xs-6">
                                         <div class="author-name-des">
-                                            <p>Aman mool</p>
-                                            <p> Web Designer </p>
+                                            <p>Rosan Dumaru</p>
+                                            <p>-Minning</p>
                                         </div>
                                     </div>
                                 </div>
@@ -717,7 +717,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-6  col-xs-6">
 
-                                    <h3>Quality Support</h3>
+                                    <h3>Real Deal</h3>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6 col-xs-6">
@@ -730,19 +730,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <p> <i class="fas fa-quote-left"></i> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, assumenda quae,
-                                obcaecati placeat totam aspernatur, dolor incidunt ut dolores doloremque sapiene
-                                nostrum! Eaque, commodi voluptatem modi perspiciatis ut ipsa neque. <i class="fas fa-quote-right"></i> </p>
+                            <p> <i class="fas fa-quote-left"></i> Hamro Gas Booking is exactly what our business has been lacking. Hamro Gas Booking is the real deal! <i class="fas fa-quote-right"></i> </p>
 
                             <div class="author">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-3 col-xs-6">
-                                        <img src="images/members/ed.jpg" alt="clients" class="img-fluid img-circle">
+                                        <img src="images/review/s1.jpg" alt="clients" class="img-fluid img-circle">
                                     </div>
                                     <div class="col-md-10 col-sm-3  col-xs-6">
                                         <div class="author-name-des">
-                                            <p>Aman mool</p>
-                                            <p>Desinger</p>
+                                            <p>Suraj Karmacharya</p>
+                                            <p>-Catering</p>
                                         </div>
                                     </div>
                                 </div>
@@ -889,7 +887,7 @@
                                             <h5>Bhaktapur</h5>
                                             <ul class="office-details">
                                                 <li><i class="fa fa-mobile"></i>(+977) 9841441142</li>
-                                                <li><i class="fa fa-envelope"></i>Support@gmail.com</li> 
+                                                <li><i class="fa fa-envelope"></i>hamrogas.nepal@gmail.com</li> 
                                                 <li><i class="fa fa-map-marker"></i><span>Golmadi-7  BKT, Nepal</span></li>
                                             </ul>
                                         </div>
@@ -901,8 +899,8 @@
                                         <div class="office">
                                             <h5>Kathmandu</h5>
                                             <ul class="office-details">
-                                                <li><i class="fa fa-mobile"></i>(+977) 9841441142</li>
-                                                <li><i class="fa fa-envelope"></i>Support@gmail.com</li> 
+                                                <li><i class="fa fa-mobile"></i>(+977) 9860465540</li>
+                                                <li><i class="fa fa-envelope"></i>hamrogas.nepal@gmail.com</li> 
                                                 <li><i class="fa fa-map-marker"></i><span>Baneshwor-7 KTM, Nepal</span></li>
                                             </ul>
                                         </div>

@@ -7,7 +7,10 @@ include_once('connection.php');
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Side Navigation Bar</title>
+  <title>Hamro Gas</title>
+
+   <!-- favIcon -->
+    <link rel="shortcut icon" href="../../../images/favicon/burn.png" />
   
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
