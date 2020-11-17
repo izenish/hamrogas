@@ -305,7 +305,7 @@
                 <div class="row">
                     <div class="col-md-12 wow fadeIn" data-wow-duration="2s">
                         <div id="our-statement" class="text-center">
-                            <h3><i class="fas fa-quote-left"></i>We try creating a site that will help you save
+                            <h3><i class="fas fa-quote-left"></i>Helping you save
                                 <strong>time</strong> and <strong>effort</strong> buying Gas.<i
                                     class="fas fa-quote-right"></i></h3>
                             <p> -HamroGas </p>
