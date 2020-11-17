@@ -349,7 +349,7 @@
                         <div id="team-members" class="owl-carousel owl-theme">
                             <!-- first member -->
                             <div class="team-member">
-                                <img src="images/members/r1.jpg" alt="team member" class="img-fluid">
+                                <img src="images/members/r4.jpg" alt="team member" class="img-fluid">
 
                                 <div class="team-member-overlay">
                                     <div class="team-member-info text-center">
@@ -371,7 +371,7 @@
                             <!-- second member -->
                             <div class="team-member">
 
-                                <img src="images/members/r4.jpg" alt="team member" class="img-fluid">
+                                <img src="images/members/r0.jpg" alt="team member" class="img-fluid">
                                 <div class="team-member-overlay">
                                     <div class="team-member-info text-center">
                                         <h6>Jenish Prajapati</h6>
