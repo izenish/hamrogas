@@ -95,6 +95,9 @@ if (mysqli_num_rows($resultq) > 0){
     $j = $otp;
     $lat=$_POST['latitude'];
     $long=$_POST['longitude'];
+  
+//   // echo "Nepal";exit();
+
 
     $sql = "INSERT INTO `customer` (`first_name`, `email`,`last_name`,`item`,`purpose`,`payment`,`quantity`,`phone_number`,`profile`,`address`,`citizenship_card`,`code`,`latitude`,`longitude`)
     VALUES ('$u', '$e', '$p', '$a', '$b', '$c', '$d', '$f', '$g', '$h', '$i', '$j','$lat','$long');";
@@ -157,6 +160,7 @@ $sql = "SELECT purpose FROM `item` WHERE 1 Limit 0, 10";
 $result = mysqli_query($conn, $sql);
 // $data = mysqli_num_rows($result);
 //   echo "<pre>"; print_r($result); 
+//   exit(0);
 $sql1 = "SELECT title FROM `gas_cylinders` WHERE stock>='5'";
 $result1 = mysqli_query($conn, $sql1);
 // $data = mysqli_num_rows($result1);
@@ -174,7 +178,11 @@ $result2 = mysqli_query($conn, $sql2);
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="../css/bootstrap/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="sty.css">
+       <!-- Custom css -->
+    <link rel="stylesheet" href="../css/style.css">
 
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="../css/responsive.css">
 
 <title>checkout</title>
 <style type="text/css">
@@ -193,7 +201,7 @@ $result2 = mysqli_query($conn, $sql2);
 @media (max-width: 768px)
 {
  body{   
-  background: url("images/statement1.jpg");
+ /* background: url("images/statement1.jpg");*/
   background-size: cover;
   height: 110vh;
   width: 100%;
@@ -238,9 +246,112 @@ $(document).ready(function () {
 });
 });
 </script> 
+  <!-- header -->
+    <header>
+        
+     <nav class="navbar navbar-expand-lg fixed-top" >   
+        <div class="container-fluid ">
+            <div class="site-nav-wrapper">
+                <div class="navbar-header">
 
+                    <!-- mobile menu open button -->
+                    <span id="mobile-nav-open-btn">&#9776;</span>
+
+                    <!-- LOGO -->
+                    <a class="navbar-brand smooth-scroll" href="index.php">
+                        <img src="../images/favicon/burn.png" alt="logo">
+                    </a>
+
+                    <svg id="darkMode" class="DM" width="55" height="55" viewBox="0 0 55 55" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="sun"
+                            d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z"
+                            fill="#FFD600" />
+                    </svg>
+                </div>
+        <div class="container">
+        <div class="collapse navbar-collapse" >
+          <ul class="nav navbar-nav ">
+            <li><a  class="nav-link smooth-scroll" href="../index.php#home">Home</a></li>
+            <li><a  class="nav-link smooth-scroll" href="../index.php#about">About</a></li>
+            <li><a  class="nav-link smooth-scroll" href="../index.php#team">Team</a></li>
+            <li><a  class="nav-link smooth-scroll" href="../index.php#services">Services</a></li>
+            <li><a class="nav-link smooth-scroll"  href="../index.php#contact">Contact</a></li>
+            <!-- <li><a class="nav-link "  href="php/login/signIn.php">Login</a></li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="HamroGas/php/login/staff_signin.php">Delivery Boy</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="HamroGas/php/login/admin_signIn.php">Admin</a>
+                </div>
+            </li>
+          </ul>
+        </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobile-nav">
+            <span id="mobile-nav-close-btn">&times;</span>
+            
+            <div id="mobile-nav-content">
+                <ul class="nav">
+                    <li><a  class="nav-link smooth-scroll" href="../index.php#home">Home</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="../index.php#about">About</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="../index.php#team">Team</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="../index.php#services">Services</a></li>
+                    <li><a class="nav-link smooth-scroll"  href="../index.php#contact">Contact</a></li>
+                            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="HamroGas/php/login/staff_signin.php">Delivery Boy</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="HamroGas/php/login/admin_signIn.php">Admin</a>
+                </div>
+            </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+
+        </div> 
+        </div>
+      </nav> 
+
+      <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Section 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Section 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Section 3</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Section 4
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#section41">Link 1</a>
+              <a class="dropdown-item" href="#section42">Link 2</a>
+            </div>
+          </li>
+        </ul>
+      </nav> -->
+    </header>
+    <!-- Header ends -->
 <body class="bg-light">
-  <div class="container padding bg-light my-5">
+    <div class="container py-5 bg-light my-5">
+    
 
     <div class="py-2 text-center">
       <h2>Checkout form</h2>
@@ -609,7 +720,10 @@ function showPosition(position) {
 
           document.getElementById("demo").innerHTML = txt;
 
-        </script>  
+        </script> 
+
+           <script src="../js/shopnav.js"></script>
+     <!-- <script src="js/anime/darkmode.js"></script>    --> 
 
 
 
