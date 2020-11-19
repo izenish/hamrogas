@@ -156,8 +156,8 @@ if(isset($_POST['add_deliveryBoy'])){
             	
               <input type="submit" class="btn" value="Login" name="add_deliveryBoy">
 
-             <span>Dont have an account?  <span><a href="signup.php" id="signupnow"> sign up now</a>
-             <a href="../../index.php" id="signupnow">Back to Home</a>
+             <!-- <span>Dont have an account?  <span><a href="signup.php" id="signupnow"> sign up now</a> -->
+             <a href="../../../index.php" id="signupnow">Back to Home</a>
             </form>
         </div>
             <div class="img">

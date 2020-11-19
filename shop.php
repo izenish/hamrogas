@@ -92,7 +92,7 @@ include "include/dbconnect.php";
                     <span id="mobile-nav-open-btn">&#9776;</span>
 
                     <!-- LOGO -->
-                    <a class="navbar-brand smooth-scroll" href="#home">
+                    <a class="navbar-brand smooth-scroll" href="index.php">
                         <img src="images/favicon/burn.png" alt="logo">
                     </a>
 
@@ -106,11 +106,11 @@ include "include/dbconnect.php";
         <div class="container">
         <div class="collapse navbar-collapse" >
           <ul class="nav navbar-nav ">
-            <li><a  class="nav-link smooth-scroll" href="index.php">Home</a></li>
-            <li><a  class="nav-link smooth-scroll" href="#about">About</a></li>
-            <li><a  class="nav-link smooth-scroll" href="#team">Team</a></li>
-            <li><a  class="nav-link smooth-scroll" href="#services">Services</a></li>
-            <li><a class="nav-link smooth-scroll"  href="#contact">Contact</a></li>
+            <li><a  class="nav-link smooth-scroll" href="index.php#home">Home</a></li>
+            <li><a  class="nav-link smooth-scroll" href="index.php#about">About</a></li>
+            <li><a  class="nav-link smooth-scroll" href="index.php#team">Team</a></li>
+            <li><a  class="nav-link smooth-scroll" href="index.php#services">Services</a></li>
+            <li><a class="nav-link smooth-scroll"  href="index.php#contact">Contact</a></li>
             <!-- <li><a class="nav-link "  href="php/login/signIn.php">Login</a></li> -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -133,11 +133,11 @@ include "include/dbconnect.php";
             
             <div id="mobile-nav-content">
                 <ul class="nav">
-                    <li><a  class="nav-link smooth-scroll" href="#home">Home</a></li>
-                    <li><a  class="nav-link smooth-scroll" href="#about">About</a></li>
-                    <li><a  class="nav-link smooth-scroll" href="#team">Team</a></li>
-                    <li><a  class="nav-link smooth-scroll" href="#services">Services</a></li>
-                    <li><a class="nav-link smooth-scroll"  href="#contact">Contact</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="index.php#home">Home</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="index.php#about">About</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="index.php#team">Team</a></li>
+                    <li><a  class="nav-link smooth-scroll" href="index.php#services">Services</a></li>
+                    <li><a class="nav-link smooth-scroll"  href="index.php#contact">Contact</a></li>
                             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -192,6 +192,13 @@ include "include/dbconnect.php";
 			<div class="row">
 				<div class="col-sm-6">
 		
+<<<<<<< HEAD
+=======
+					<!-- <h2>HAMRO GAS</h2>
+					<p>Making Your Life Easier</p> -->
+					
+				
+>>>>>>> 2ea85f733fa216fd6666e167736e0896fca82bbe
 			</div>
 			<div></div>
 	</section> -->
@@ -200,8 +207,18 @@ include "include/dbconnect.php";
     <div class="container" style="margin-top: 100px; ">
     </div>
     <div class="container mt-5">
+<<<<<<< HEAD
       <div class="row" id="up">
         <div class="col-md-12">Shop > Gas Cylinder</div>
+=======
+      <div class="row">
+      <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+  </ol>
+</nav>
+>>>>>>> 2ea85f733fa216fd6666e167736e0896fca82bbe
       </div>
     </div>
     <div class="container">
@@ -217,19 +234,19 @@ include "include/dbconnect.php";
                 <a href="https://bit.ly/2wp64vW">
                   <img
                     class="d-block w-100"
-                    src="images/products/red.jpg"
+                    src="images/products/gas6.jpg"
                     alt="First slide"
                   />
                 </a>
               </div>
-              <div class="carousel-item">
+              <!-- <div class="carousel-item">
                 <a href="https://bit.ly/2wp64vW">
                   <img
                     class="d-block w-100"
-                    src="images/products/product3.jpg"
+                    src="images/products/gas7.jpg"
                     alt="Second slide"
                 /></a>
-              </div>
+              </div> -->
             </div>
             <a
               class="carousel-control-prev"
@@ -268,7 +285,7 @@ include "include/dbconnect.php";
             &nbsp; &nbsp;
             <h2 class="text-success">30% off</h2>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <h3 class="text-warning">
               <i class="fa fa-star" aria-hidden="true"></i
               ><i class="fa fa-star" aria-hidden="true"></i
@@ -278,7 +295,7 @@ include "include/dbconnect.php";
             </h3>
             &nbsp; &nbsp;
             <h5>1200 star rating and 250 reviews</h5>
-          </div>
+          </div> -->
           <div class="row">
             <p>
               <i
@@ -317,7 +334,7 @@ include "include/dbconnect.php";
               <i class="fa fa-map-marker" aria-hidden="true"></i>
             </h3>
             <p style="font-size: 20px">
-              &nbsp; Delivery by July 1, Wednesday | &nbsp;
+              &nbsp; Delivery by Nov 25, Wednesday | &nbsp;
               <span class="text-success">FREE</span>
             </p>
           </div>
@@ -335,72 +352,18 @@ include "include/dbconnect.php";
       <div class="row mt-5">
         <h2>Our Partner Brands</h2>
       </div>
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+		 $("#div_refresh").load("load.php");
+        setInterval(function() {
+            $("#div_refresh").load("gas.php");
+        }, 3000);
+    });
+ 
+</script>
 
-      <div class="row mt-5">
-      <?php 
-    
-        $sql="select * from gas_cylinders order by gas_id ASC";
-        $res=mysqli_query($conn,$sql);
-        if(mysqli_num_rows($res)>0)
-        {
-          while($row=mysqli_fetch_assoc($res))
-          {               
-        ?>
-        
-
-        <div class="col-md-3">
-        
-          <div class="card card-body " style="height:80% !important">
-          
-            <img
-              class="card-img-top img-fluid"
-              src="images/products/<?= $row['featured_image'];?>"
-            />
-            <div class="card-title">
-              <h4><?php echo $row['title']?></h4>
-            </div>
-            <div class="card-text">
-             <?php echo $row['content']?>
-              <br /><br />
-              <h4 class="card-title">Rs.<?php echo $row['exc_price']?><font style="font-family: 'Maven Pro', sans-serif;font-size:10px;">/ Exchange cylinder</font></h5>
-              <h6 class="card-title">Rs.<?php echo $row['new_price']?><font style="font-family: 'Maven Pro', sans-serif;font-size:10px;">/ NEW cylinder</font></h4>
-              <?php 
-              if($row['stock']>10)
-              { ?>
-              <a class="btn btn-success text-light" href="stripe_integration_php/checkout.php"> Buy Now</a> &nbsp;
-            
-          <?php }
-          ?>
-          <?php if($row['stock']<10&&$row['stock']>0)
-              { $e=$row['gas_id'];
-                $f=$row['title'];
-
-                ?>
-                
-              <a class="btn btn-warning text-light" href="stripe_integration_php/checkout.php?id=<?= $e ?> && gas=<?= $f ?> " > Limited Stock! Buy Now </a> &nbsp;
-              <?php 
-              }
-              ?>
-              <?php if($row['stock']<=0)
-              { ?>
-              <a class="btn btn-danger text-light"> Out Of Stock</a> &nbsp;
-              <?php 
-              }
-              ?>    
-              
-              <br /><br />
-            </div>
-          </div>
-        </div>
-        <?php 
-          }
-        }
-
-        ?>          
-      </div>
-    </div>
-
-
+<div id="div_refresh"></div>
 
 
 
@@ -571,7 +534,7 @@ include "include/dbconnect.php";
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="exampleInputPassword1">Review</label>
           <textarea
             type="text"
             class="form-control"
