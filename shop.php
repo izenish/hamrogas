@@ -195,7 +195,12 @@ include "include/dbconnect.php";
     </div>
     <div class="container mt-5">
       <div class="row">
-        <div class="col-md-12">Shop > Gas Cylinder</div>
+      <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Shop</li>
+  </ol>
+</nav>
       </div>
     </div>
     <div class="container">
@@ -211,19 +216,19 @@ include "include/dbconnect.php";
                 <a href="https://bit.ly/2wp64vW">
                   <img
                     class="d-block w-100"
-                    src="images/products/gas5.jpg"
+                    src="images/products/gas6.jpg"
                     alt="First slide"
                   />
                 </a>
               </div>
-              <div class="carousel-item">
+              <!-- <div class="carousel-item">
                 <a href="https://bit.ly/2wp64vW">
                   <img
                     class="d-block w-100"
-                    src="images/products/product3.jpg"
+                    src="images/products/gas7.jpg"
                     alt="Second slide"
                 /></a>
-              </div>
+              </div> -->
             </div>
             <a
               class="carousel-control-prev"
@@ -262,7 +267,7 @@ include "include/dbconnect.php";
             &nbsp; &nbsp;
             <h2 class="text-success">30% off</h2>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <h3 class="text-warning">
               <i class="fa fa-star" aria-hidden="true"></i
               ><i class="fa fa-star" aria-hidden="true"></i
@@ -272,7 +277,7 @@ include "include/dbconnect.php";
             </h3>
             &nbsp; &nbsp;
             <h5>1200 star rating and 250 reviews</h5>
-          </div>
+          </div> -->
           <div class="row">
             <p>
               <i
