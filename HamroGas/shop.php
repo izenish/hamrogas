@@ -116,17 +116,7 @@
     </header>
 
     <!--Banner Section-->
-    	<section class="banner">
-		<div class="container">
-			<div class="row">
-				<!-- <div class="col-sm-6">
-					<h2>HAMRO GAS</h2>
-					<p>Making Your Life Easier</p>
-					
-				
-			</div> -->
-			<div></div>
-	</section>
+
 
 
     <div class="container">
@@ -195,11 +185,11 @@
         </div>
       </nav> -->
     </div>
-    <div class="container mt-5">
+   <!--  <div class="container mt-5">
       <div class="row">
         <div class="col-md-12">Shop > Gas Cylinder</div>
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <div class="row">
         <div class="col-md-6">
