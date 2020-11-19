@@ -146,14 +146,14 @@ include("include/header.php");
 
             <ul>
               <li >
-                <a href="index.php" style="background: #5343c7; color: #fff;">
+                <a href="index.php" >
                   <span class="icon">
                     <i class="fas fa-border-all"></i></span>
                   <span class="list">Dashboard</span>
                 </a>
               </li>
               <li>
-                <a href="charts.php">
+                <a href="charts.php" style="background: #5343c7; color: #fff;">
                   <span class="icon"><i class="fas fa-chart-pie"></i></span>
                   <span class="list">Charts</span>
                 </a>

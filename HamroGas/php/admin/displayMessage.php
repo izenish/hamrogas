@@ -49,7 +49,7 @@ if(!isset($_SESSION['username'])) {
 
             <ul>
               <li >
-                <a href="index.php" style="background: #5343c7; color: #fff;">
+                <a href="index.php">
                   <span class="icon">
                     <i class="fas fa-border-all"></i></span>
                   <span class="list">Dashboard</span>
@@ -114,15 +114,15 @@ if(!isset($_SESSION['username'])) {
                   </div>
               </li>
                    <li>
-                 <button class="dropdown-btn" >   
+                 <button class="dropdown-btn"   >   
                     <span class="icon"><i class="far fa-comments"></i></span>
                     <span class="list">Message</span>
                     <span class="down"><i class="fa fa-caret-down"></i></span>
                     
                   </button>
 
-                  <div class="dropdown-container" >
-                     <a href="displayMessage.php">
+                  <div class="dropdown-container"  style="display: block;">
+                     <a href="displayMessage.php"  style="background: #5343c7; color: #fff;">
                       <span class="icon"><i class="far fa-comments"></i></span>     
                       <span class="list">All messages</span>
                     </a>
