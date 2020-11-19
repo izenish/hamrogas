@@ -141,6 +141,8 @@ $sql = mysqli_query($conn,"UPDATE message SET status=1 WHERE id='$main_id'");
     <li class="breadcrumb-item active" aria-current="page">UnSeen Messages</li>
   </ol>
 </nav>
+
+
 <!-- table -->
   <div class="row justify-content-center">
   <table class="table table-bordered table-striped table-hover">
@@ -180,6 +182,8 @@ $sql = mysqli_query($conn,"UPDATE message SET status=1 WHERE id='$main_id'");
 <?php } ?> 
   </tbody>
 </table>
+
+
 
     
   </div>

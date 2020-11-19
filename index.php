@@ -165,7 +165,7 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        BOOK NOW
+                        Get Started
                     </a>      
                 </div>
                 <div id="curve">
