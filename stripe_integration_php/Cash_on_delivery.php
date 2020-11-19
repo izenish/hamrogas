@@ -95,7 +95,7 @@ $row1 = mysqli_fetch_assoc($result1);
 				<hr size="1" class="w-100 mb-3">
 			
   <div class="d-flex justify-content-between mb-3">
-    <div class="p-2"><button class="btn btn-success mt-3 mb-3">
+    <div class="p-2"><button class="btn btn-success mt-3 mb-3" onclick="myFunction()">
 				<a href="checkout.php"> Ok</a></button></div>
     
     <div class="p-2"><button class="btn btn-danger mt-3 mb-3">
@@ -107,4 +107,13 @@ $row1 = mysqli_fetch_assoc($result1);
 			
 		</body>
 		</html>
+
+
+
+<script>
+function myFunction() {
+  alert("Your order has been confirmed!");
+  echo "<a href=checkout.php></a>";
+}
+</script>		
 

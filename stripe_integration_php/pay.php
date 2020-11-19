@@ -160,7 +160,7 @@ $result2 = mysqli_query($conn, $sql2);
   <link rel="stylesheet" type="text/css" href="sty.css">
 
 
-  <title>Bootstrap</title>
+  <title>Pay</title>
   <style type="text/css">
     @media (max-width: 1992px)
 {
