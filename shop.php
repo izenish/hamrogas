@@ -181,11 +181,18 @@ include "include/dbconnect.php";
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
+<<<<<<< HEAD
 		
+=======
+					<!-- <h2>HAMRO GAS</h2>
+					<p>Making Your Life Easier</p> -->
+					
+				
+>>>>>>> 1e5b73d55765777a55e51f2df7b97842ad7b41ef
 			</div>
 			<div></div>
 	</section>
-
+ 
 
     <div class="container">
     </div>
