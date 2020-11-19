@@ -390,39 +390,19 @@ function showPosition(position) {
             </select>
           </div>
 
-          <div class="col-md-4 mb-4">
-            <label for="item">Item</label>
-            <select class="custom-select-sm  form-control form-control-sm" name="item" required="">
-              <?php
-              if (mysqli_num_rows($result1) > 0) {
-          // output data of each row
-          //$user_list = mysqli_fetch_assoc($result);
-          // echo "<pre>"; print_r($user_list);exit;
-
-                while($row = mysqli_fetch_assoc($result1)) {
-              // echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["email"]. "<br>";
-                  ?>
-                  <option value="<?= $row["title"];?>">
-                   <?= $row["title"];?>
-                 </option>
-
-                 <?php
-               }   
-             } else {
-              ?>
-              <tr>
-                <td colspan="3">No Record(s) found.</td>
-              </tr>
-              <?php
-            }
-            ?>
-            <?php 
-            mysqli_close($conn);
-            ?>
-
-          </select>
-
-        </div>
+          <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+		 $("#div_refresh").load("stockrefresh.php");
+        setInterval(function() {
+            $("#div_refresh").load("stockrefresh.php");
+        }, 20000);
+    });
+ 
+</script>
+<div class="col-md-4 mb-4">
+<div id="div_refresh"></div>
+</div>
         <div class="col-md-4 mb-4">
           <label for="purpose">Purpose</label>
           <select class="custom-select-sm  form-control" name="purpose" required="" id="purpose" onselect="purposeSelected(this.value);"  onchange="purposeSelected(this.value);" >
