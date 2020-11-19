@@ -25,7 +25,7 @@
                         ) .then((result) => {
                                 if (result.value) {
                                  // 
-                                 window.location.href = "delete.php"+"?mask="+id1;
+                                 window.location.href = "deleteStaff.php"+"?mask="+id1;
                                 }
                                  // 
                                 })    
