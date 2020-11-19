@@ -20,7 +20,7 @@ $row2 = mysqli_fetch_assoc($result2);
     $cid=$row1['customer_id'];
     //echo $row1['quantity'];
     // Convert price to cents 
-    $itemPrice = ($row2['exc_price'])*100*$quantity; 
+    $itemPrice = ($row2['exc_price']*$quantity*100); 
  //--------------------------------------------------------------
  
 //-------itemname------

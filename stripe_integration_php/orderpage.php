@@ -48,11 +48,6 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
 	<link rel="stylesheet" href="bootstrap/bootstrap.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="sty.css">
-         <!-- Custom css -->
-    <link rel="stylesheet" href="../css/style.css">
-
-    <!-- Responsive css -->
-    <link rel="stylesheet" href="../css/responsive.css">
 	<style>
 		
 	     h6,label
@@ -116,111 +111,8 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
 	</style>
 </head>
 <body>
-   <!-- header -->
-    <header>
-        
-     <nav class="navbar navbar-expand-lg fixed-top" >   
-        <div class="container-fluid ">
-            <div class="site-nav-wrapper">
-                <div class="navbar-header">
-
-                    <!-- mobile menu open button -->
-                    <span id="mobile-nav-open-btn">&#9776;</span>
-
-                    <!-- LOGO -->
-                    <a class="navbar-brand smooth-scroll" href="index.php">
-                        <img src="../images/favicon/burn.png" alt="logo">
-                    </a>
-
-                    <svg id="darkMode" class="DM" width="55" height="55" viewBox="0 0 55 55" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path class="sun"
-                            d="M55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5Z"
-                            fill="#FFD600" />
-                    </svg>
-                </div>
-        <div class="container">
-        <div class="collapse navbar-collapse" >
-          <ul class="nav navbar-nav ">
-            <li><a  class="nav-link smooth-scroll" href="../index.php#home">Home</a></li>
-            <li><a  class="nav-link smooth-scroll" href="../index.php#about">About</a></li>
-            <li><a  class="nav-link smooth-scroll" href="../index.php#team">Team</a></li>
-            <li><a  class="nav-link smooth-scroll" href="../index.php#services">Services</a></li>
-            <li><a class="nav-link smooth-scroll"  href="../index.php#contact">Contact</a></li>
-            <!-- <li><a class="nav-link "  href="php/login/signIn.php">Login</a></li> -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Login
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="HamroGas/php/login/staff_signin.php">Delivery Boy</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="HamroGas/php/login/admin_signIn.php">Admin</a>
-                </div>
-            </li>
-          </ul>
-        </div>
-        </div>
-
-        <!-- mobile menu -->
-        <div id="mobile-nav">
-            <span id="mobile-nav-close-btn">&times;</span>
-            
-            <div id="mobile-nav-content">
-                <ul class="nav">
-                    <li><a  class="nav-link smooth-scroll" href="../index.php#home">Home</a></li>
-                    <li><a  class="nav-link smooth-scroll" href="../index.php#about">About</a></li>
-                    <li><a  class="nav-link smooth-scroll" href="../index.php#team">Team</a></li>
-                    <li><a  class="nav-link smooth-scroll" href="../index.php#services">Services</a></li>
-                    <li><a class="nav-link smooth-scroll"  href="../index.php#contact">Contact</a></li>
-                            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Login
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="HamroGas/php/login/staff_signin.php">Delivery Boy</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="HamroGas/php/login/admin_signIn.php">Admin</a>
-                </div>
-            </li>
-                    
-                    
-                </ul>
-            </div>
-        </div>
-
-        </div> 
-        </div>
-      </nav> 
-
-      <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#home">Section 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">Section 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Section 3</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Section 4
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#section41">Link 1</a>
-              <a class="dropdown-item" href="#section42">Link 2</a>
-            </div>
-          </li>
-        </ul>
-      </nav> -->
-    </header>
-    <!-- Header ends -->
 	
-	<div class="container py-5 my-5 bg-light ">
+	<div class="container padding my-5 bg-light ">
 		<h1 class="text-center p-3">Checkout</h1>
 		<hr size="1" class="w-100 mb-3">
 	      
@@ -439,5 +331,3 @@ $(document).ready(function() {
     });
 });
 </script>
-        <script src="../js/shop.js"></script>
-           <script src="../js/shopnav.js"></script>
