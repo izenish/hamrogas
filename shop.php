@@ -180,15 +180,15 @@ include "include/dbconnect.php";
     	<section class="banner">
 		<div class="container">
 			<div class="row">
-				<!-- <div class="col-sm-6">
-					<h2>HAMRO GAS</h2>
-					<p>Making Your Life Easier</p>
+				<div class="col-sm-6">
+					<!-- <h2>HAMRO GAS</h2>
+					<p>Making Your Life Easier</p> -->
 					
 				
-			</div> -->
+			</div>
 			<div></div>
 	</section>
-
+ 
 
     <div class="container">
     </div>

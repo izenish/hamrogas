@@ -313,7 +313,7 @@
               <i class="fa fa-map-marker" aria-hidden="true"></i>
             </h3>
             <p style="font-size: 20px">
-              &nbsp; Delivery by23 Jul, Tuesday | &nbsp;
+              &nbsp; Delivery by19 Nov, Friday| &nbsp;
               <span class="text-success">FREE</span>
             </p>
           </div>
@@ -578,7 +578,7 @@
         <h2>Post Your Own Reviews</h2>
       </div>
 
-      <form>
+      <!-- <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input
@@ -609,7 +609,7 @@
           >
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </form> -->
     </div>
 
     <!-- Optional JavaScript -->
