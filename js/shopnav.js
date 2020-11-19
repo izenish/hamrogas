@@ -12,7 +12,7 @@ $(function () {
     function showHideNav()
     {
          // alert('you scrolled');
-       if($(window).scrollTop() > 50)
+       if($(window).scrollTop() >=0)
        {
            //display white nav
            $('nav').addClass("white-nav-top");
