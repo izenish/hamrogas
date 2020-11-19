@@ -135,9 +135,9 @@ header {
   text-align: center;
   border: none;
   border-radius: 5px;
-  -webkit-box-shadow: 3px 3px 5px 2px #ccc;
-  -moz-box-shadow: 3px 3px 5px 2px #ccc;
-  box-shadow: 3px 3px 5px 2px #ccc;
+  -webkit-box-shadow: 2px 3px 10px 2px #ccc;
+  -moz-box-shadow: 2px 3px 10px 2px #ccc;
+box-shadow: 2px 3px 10px 2px #ccc;
   margin-bottom: 100px;
 }
 .card {

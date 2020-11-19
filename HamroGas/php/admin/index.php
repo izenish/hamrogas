@@ -291,9 +291,9 @@ include("include/header.php");
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="review.php">
                   <span class="icon"><i class="fab fa-blogger"></i></span>
-                  <span class="list">Blogs</span>
+                  <span class="list">reviews</span>
                 </a>
               </li>
               <li>

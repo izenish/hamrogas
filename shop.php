@@ -48,6 +48,16 @@ include "include/dbconnect.php";
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
+
+        <!-- owl carousel css -->
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
+
+<!-- rateyo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+
        <!-- Custom css -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -177,27 +187,20 @@ include "include/dbconnect.php";
 
 
     <!--Banner Section-->
-    	<section class="banner">
+<!--     	<section class="banner">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
-<<<<<<< HEAD
 		
-=======
-					<!-- <h2>HAMRO GAS</h2>
-					<p>Making Your Life Easier</p> -->
-					
-				
->>>>>>> 1e5b73d55765777a55e51f2df7b97842ad7b41ef
 			</div>
 			<div></div>
-	</section>
- 
+	</section> -->
 
-    <div class="container">
+
+    <div class="container" style="margin-top: 100px; ">
     </div>
     <div class="container mt-5">
-      <div class="row">
+      <div class="row" id="up">
         <div class="col-md-12">Shop > Gas Cylinder</div>
       </div>
     </div>
@@ -466,8 +469,10 @@ include "include/dbconnect.php";
                 
       </div>
     </div>
+
+
     <!--Review Section-->
-    <div class="container mt-5 mb-5">
+ <!--    <div class="container mt-5 mb-5">
       <div class="row">
         <h2>Ratings & Reviews</h2>
       </div>
@@ -584,6 +589,224 @@ include "include/dbconnect.php";
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+ -->
+
+
+        <!-- testomonial -->
+    <section id="testimonials" style="margin-top: 100px;"> 
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 wow fadeInLeft" >
+                    <div class="vertical-heading">
+                        <h5>who we are</h5>
+                        <h3>What our <br><strong>Customers </strong>Say</h3>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div id="testomanial-slider" class="owl-carousel owl-theme">
+
+                       
+
+       <?php 
+      include_once('include/dbconnect.php');
+     $sql = mysqli_query($conn,"SELECT * FROM review ");
+     while($main_result = mysqli_fetch_assoc($sql))
+     {
+     ?>
+      <!-- testomonial 1 -->
+     <div class="testimonial">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6   col-xs-6 wow fadeIn" data-wow-delay="1s">
+                                    <h3>Reviews and rating</h3>
+                                </div>
+                                <div class="col-md-6 col-sm-6  col-xs-6">
+                                   
+                                  <div class="rateyo" id= "rating"
+                                             data-rateyo-rating="<?php echo $main_result['rating']; ?>"
+                                             data-rateyo-num-stars="5"
+                                             data-rateyo-score="3">
+                                             </div>
+
+                                </div>
+                            </div>
+                            <p><i class="fas fa-quote-left wow fadeIn"></i> <?php echo $main_result['comment']; ?> <i class="fas fa-quote-right"></i></p>
+                            <div class="author">
+                                <div class="row">
+                                 <!--    <div class="col-md-2 col-sm-3  col-xs-6 wow fadeIn">
+                                        <img src="images/members/ed.jpg" alt="clients" class="img-fluid img-circle">
+                                    </div> -->
+                                    <div class="col-md-10 col-sm-3 col-xs-6 wow fadeIn">
+                                        <div class="author-name-des">
+                                            <p><?php echo $main_result['name']; ?></p>
+                                            <p> <?php echo $main_result['email']; ?> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+         
+          <?php } ?>
+
+
+
+                        
+
+                      
+                      
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+
+ <!--  contact -->
+       <section id="contact">
+
+           <div class="content-box-md">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-md-6 wow fadeInLeft">
+                        <!-- contact left -->
+                        <div id="contact-left">
+                               <div class="vertical-heading" style="padding: 0px; margin-bottom: 0px;">
+                                   <h5>Who we are</h5>
+                                   <h3>Give your <br><strong> Reviews</strong></h3>
+                               </div>
+                               <p>Your review help us improve significantly</p>
+
+                               <div id="offices">
+                                   <div class="row">
+                                       <div class="col-md-6 col-sm-6">
+                                           
+                                        <div class="office">
+                                            <h5>Bhaktapur</h5>
+                                            <ul class="office-details">
+                                                <li><i class="fa fa-mobile"></i>(+977) 9841441142</li>
+                                                <li><i class="fa fa-envelope"></i>hamrogas.nepal@gmail.com</li> 
+                                                <li><i class="fa fa-map-marker"></i><span>Golmadi-7  BKT, Nepal</span></li>
+                                            </ul>
+                                        </div>
+
+                                       </div>
+
+                                       <div class="col-md-6 col-sm-6">
+                                           
+                                        <div class="office">
+                                            <h5>Kathmandu</h5>
+                                            <ul class="office-details">
+                                                <li><i class="fa fa-mobile"></i>(+977) 9860465540</li>
+                                                <li><i class="fa fa-envelope"></i>hamrogas.nepal@gmail.com</li> 
+                                                <li><i class="fa fa-map-marker"></i><span>Baneshwor-7 KTM, Nepal</span></li>
+                                            </ul>
+                                        </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <ul class="social-list">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+
+                            </ul>
+                        </div>
+                        </div>
+
+                        <div class="col-md-6 wow fadeInRight">
+                            <!-- contact ko right side ko lagi -->
+                            <div id="contact-right">
+
+
+                                <form action="php/admin/review_send.php" method="post">
+                                    <h4>Post Review</h4>
+                                    <p>Add review through which other can know about your experience with the webiste </p>
+
+                                    <div class="row">
+
+
+                                       <div class="col-md-12">
+                                            <div class="form-group">
+                                                                                        
+                                                   <div class="rateyo" id= "rating"
+                                                     data-rateyo-rating="4"
+                                                     data-rateyo-num-stars="5"
+                                                     data-rateyo-score="3">
+                                                     </div>
+
+                                                <span class='result'>0</span>
+                                                <input type="hidden" name="rating">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="name" placeholder="Your name" name="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="email" placeholder="Email address" name="email" required> 
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="Message"  placeholder="Type your message here ....... " name="msg" ></textarea>
+                                    </div>
+
+                                    <div id="submit-btn">
+                                        <input type="submit" class="btn-submit" id="submit"  value="Submit " name="send">
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                   </div>
+               </div>
+           </div>
+
+       </section>
+       <!-- contact section ends -->
+
+
+
+
+
+
+
+      <!-- Footer Area -->
+        <footer class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Copyright &copy; 2020 All Rights Reserved By <span>HamroGas Inc.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- back to top -->
+            <a href="#up" id="back-to-top" class="btn btn-sm btn-yellow btn-back-to-top smooth-scroll" title="home" role="button">
+                <i class="fa fa-angle-up"></i>
+            </a>
+
+        </footer> 
+        <!-- footer ends -->
+
+        
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -616,8 +839,30 @@ include "include/dbconnect.php";
         $(".popupalert").css("display", "none");
       });
     </script> -->
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script>
 
 
+    $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('rating :'+ rating);
+            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+        });
+    });
+
+</script>
+
+
+
+
+
+
+ <!-- owl couresel js   -->
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
         <!-- customJs -->
     <script src="js/shopnav.js"></script>
      <!-- <script src="js/anime/darkmode.js"></script>    -->

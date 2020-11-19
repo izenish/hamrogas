@@ -1,7 +1,7 @@
 <?php 
 
 
-$conn = mysqli_connect('localhost','root','', 'hamrogas' );
+$conn = mysqli_connect('localhost','root','', 'notify' );
 
 if($conn)
 {
