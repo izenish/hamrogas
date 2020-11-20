@@ -516,7 +516,7 @@
 
                                 <div class="horizontal-heading">
                                     <h3>Our customer satifaction is our satisfaction</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae vitae debitis optio error necessitatibus earum consectetur dolor magnam perspiciatis. Nam, provident placeat voluptatibus quod accusantium soluta minus cumque esse minima!</p>
+                                    <p></p>
                                 </div>
                                 
                             </div>
@@ -578,7 +578,7 @@
                                         <div class=" col-md-10 ">
                                             <h5>Feature 01</h5>
                                             <h4>Responsive</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, rerum reprehenderit. </p>
+                                            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, rerum reprehenderit. </p> -->
                                         
                                         </div>
                                     </div>
@@ -597,7 +597,7 @@
                                         <div class=" col-md-10">
                                             <h5>Feature 02</h5>
                                             <h4>Web Development</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, rerum reprehenderit. </p>
+                                            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, rerum reprehenderit. </p> -->
                                         
                                         </div>
                                     </div>
@@ -615,7 +615,7 @@
                                         <div class=" col-md-10">
                                             <h5>Feature 03</h5>
                                             <h4>Digital Marketing</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, rerum reprehenderit.</p>
+                                            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, rerum reprehenderit.</p> -->
                                         
                                         </div>
                                     </div>
@@ -829,7 +829,7 @@
                       <div class="col-md-12 text-center">
                         <div class="horizontal-heading">
                             <h3>Our Inhand Suppliers and Dealers </h3>
-                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae vitae debitis optio error necessitatibus earum consectetur dolor magnam perspiciatis. Nam, provident placeat voluptatibus quod accusantium soluta minus cumque esse minima!</p>
+                             <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae vitae debitis optio error necessitatibus earum consectetur dolor magnam perspiciatis. Nam, provident placeat voluptatibus quod accusantium soluta minus cumque esse minima!</p> -->
                          </div>
 
                       </div>
@@ -877,7 +877,7 @@
                                    <h5>Who we are</h5>
                                    <h3>Get In <br><strong> Touch</strong></h3>
                                </div>
-                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p> -->
 
                                <div id="offices">
                                    <div class="row">
@@ -921,7 +921,7 @@
                             <div id="contact-right">
                                 <form action="php/admin/message_send.php" method="post">
                                     <h4>Send Message</h4>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p> -->
 
                                     <div class="row">
                                         <div class="col-md-6">
