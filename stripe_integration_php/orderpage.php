@@ -12,11 +12,14 @@ $row = mysqli_fetch_assoc($result);
 //$data = mysqli_num_rows($result);
  //echo "<pre>"; print_r($result); 
 $t=$row['item'];
+$ty=$row['type'];
 
 // to get the price of gas
-$sql2 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
+if($ty=='old'){
+  $sql2 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
 $result2 = mysqli_query($conn, $sql2);
 $row2 = mysqli_fetch_assoc($result2);
+$xy=$row2['exc_price'];
 
 $itemName = $row['item'];
 // echo $itemName;
@@ -24,7 +27,22 @@ $itemName = $row['item'];
 
 $itemPrice = $row2['exc_price']; 
 $currency = "NPR";
+}else{
+  $sql2 = "SELECT new_price FROM `gas_cylinders` WHERE `title`= '$t'";
+$result2 = mysqli_query($conn, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
+$xy=$row2['new_price'];
+
+$itemName = $row['item'];
+// echo $itemName;
+// echo "what";
+
+$itemPrice = $row2['new_price']; 
+$currency = "NPR";
+}
 ?>
+
+
  <?php
 // Stripe API configuration  
 define('STRIPE_API_KEY', 'sk_test_bLuNu2qzeSYGD4ywtlZqOXFi00cfMEQPBJ'); 
@@ -213,7 +231,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
 
 </div>
     <div class="p-2 "><span class="rounded border border-success px-2 py-1"><?= $row['quantity']; ?></span></div>
-    <div class="p-2 "><?=$row2['exc_price']?></div>
+    <div class="p-2 "><?=$xy?></div>
   </div>
 				    
 					
@@ -225,7 +243,7 @@ define('STRIPE_PUBLISHABLE_KEY', 'pk_test_IZH7sHIUCP5uyD1uXVIqb2oI00NLbyPsKB');
     <div class="px-3">Subtotal</div>
     
     <div class="px-3 "><?php 
-                        $stotal=($row['quantity'])*($row2['exc_price']);
+                        $stotal=($row['quantity'])*($xy);
                     echo $stotal ?></div>
   </div>
   <div class="d-flex justify-content-between text-muted mb-3">

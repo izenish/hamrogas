@@ -14,15 +14,14 @@ include('connection.php');
 
   if (isset($_POST['product'])) {
       
-      $item= $_POST['item'];
+      $item= strtoupper($_POST['item']);
+      // echo "item";
       $price = $_POST['price'];
-      $n = $_POST['new_price'];
+      $np = $_POST['new_price'];
       $name=$_POST['full-name'];
       $e = $_POST['email'];
       $q = $_POST['Quantity'];
-      $purpose = $_POST['purpose'];
       $content = $_POST['content'];
-      $type = $_POST['type'];
       //     echo "<br><br><br>string<br>";
   // exit();
       
@@ -63,8 +62,8 @@ include('connection.php');
       if(move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
 
         // $conn = mysqli_connect("localhost", "root", "", "notify");
-             // $sql = "INSERT INTO `Product` (`featured_image`,`title`,`user_name`,`email`,`content`,`exc_price`,`purpose`,`stock`,`type`) VALUES ('$profileImageName','$item','$name','$e','$content','$price','$purpose','$q','$type')";
-             $sql2 = "INSERT INTO `gas_cylinders` (`featured_image`,`title`,`content`,`exc_price`,`new_price`,`stock`,`purpose`,`type`,`user_name`,`email`) VALUES ('$profileImageName','$item','$content','$price','$n','$q','$purpose','$type','$name','$e')";
+          
+             // $sql2 = "INSERT INTO `gas_cylinders` (`featured_image`,`title`,`content`,`exc_price`,`new_price`,`stock`,`purpose`,`type`,`user_name`,`email`) VALUES ('$profileImageName','$item','$content','$price','$n','$q','$purpose','$type','$name','$e')";
              // echo "$sql2";
              // exit();
 
@@ -72,21 +71,76 @@ include('connection.php');
 // echo "<pre>";print_r($_FILES['profileImage']);exit;
              // mysqli_query($conn,$sql2);
 
+             $sql3 = "SELECT * From gas_cylinders where title = '$item'";
+             // echo "$sql3";
+             $result5 = mysqli_query($conn,$sql3);
+             // echo "$sql3";
+             
+              if (mysqli_num_rows($result5)>0) {
+
+              $rows = mysqli_fetch_assoc($result5);              
+              
+             $T_stock = $rows['stock'];
+             // echo "$T_stock";
+             // exit();
+             
+             $totalstock = $q + $T_stock;
+             // echo "$totalstock";
+              // exit();
+
+   $sql2 ="UPDATE gas_cylinders SET new_price = '$np',exc_price ='$price',stock = '$totalstock' where title = '$item' "; 
+    // echo "$sql2";
+   
+   $row = mysqli_query($conn, $sql2);
+
+        if($row){
+          $msg = "Image uploaded and saved in the Database update";
+          $msg_class = "alert-success";
+        } 
+        else {
+          echo "<br><br>";
+          die("Connection failed: " . mysqli_error($conn));
+          $msg1 = "unable to connect database";
+          $msg_class = "alert-danger";
+        }
+      
+
+ } 
+ else {
+        $sql2 = "INSERT INTO gas_cylinders(`featured_image`,`title`,`content`,`new_price`,`exc_price`,`stock`) values ('$profileImageName','$item','$content','$np','$price','$q')";
+
         if(mysqli_query($conn, $sql2)){
           $msg = "Image uploaded and saved in the Database";
           $msg_class = "alert-success";
+          // mysqli_close();
         } else {
           echo "<br><br>";
           // die("Connection failed: " . mysqli_error($conn));
-          $msg1 = "username or email already exist or unable to connect database";
+          $msg1 = "unable to connect database";
           $msg_class = "alert-danger";
         }
-      } else {
+      } 
+        $sql = "INSERT INTO product (`image`,`Name`,`user_name`,`email`,`Content`,`new_Price`,`exc_price`,`stock`) VALUES ('$profileImageName','$item','$name','$e','$content','$np','$price','$q')";
+
+             $value5 = mysqli_query($conn,$sql);
+          if($value5) {
+          echo "<br><br>";
+          // die("Connection failed: " . mysqli_error($conn));
+           $msg = "Image uploaded and saved in the Database";
+          $msg_class = "alert-success";
+          
+    }  
+
+
+
+   else {
         $error = "There was an error uploading the file";
-        $msg = "alert-danger";
+        // $msg = "alert-danger";
       }
     }
   }
+ // $msg_class = "alert-danger";
+        }
 
  
 ?> 
@@ -164,36 +218,7 @@ $result2 = mysqli_query($conn, $sql2);
                     <div class="row" style="padding-left: 20px;">
                        <div class="col-50">
                         <label for="Product"><i class="fa fa-user"></i>Product Name</label>
-                        
-                         <select   class="custom-select-sm  form-control form-control-sm" name="item"  required="">
-              <?php
-              if (mysqli_num_rows($result1) > 0) {
-          // output data of each row
-          //$user_list = mysqli_fetch_assoc($result);
-          // echo "<pre>"; print_r($user_list);exit;
-
-                while($row = mysqli_fetch_assoc($result1)) {
-              // echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["email"]. "<br>";
-                  ?>
-                  <option value="<?= $row["gas_name"];?>">
-                   <?= $row["gas_name"];?>
-                 </option>
-
-                 <?php
-               }   
-             } else {
-              ?>
-              <tr>
-                <td colspan="3">No Record(s) found.</td>
-              </tr>
-              <?php
-            }
-            ?>
-            <?php 
-            mysqli_close($conn);
-            ?>
-
-          </select>  
+                      <input type="text" name="item" placeholder="Enter product name">
                         <label for="full-name"><i class="fa fa-user"></i>User Name</label>
                         <input type="text" name="full-name" placeholder=" Name">
                          
@@ -213,64 +238,7 @@ $result2 = mysqli_query($conn, $sql2);
                        <label for="email" ><i class="fa fa-envelope"></i>Email</label>
                         <input type="email" name="email" placeholder=" .......@gmail.com" required="">
                        
-                        <label for="purpose">Purpose</label>
-                          <select  class="custom-select-sm  form-control" name="purpose" required="" id="purpose" onselect="purposeSelected(this.value);"  onchange="purposeSelected(this.value);" >
-<option style="display: none" disabled selected value> purpose</option>  
-     
-            <?php
-            if (mysqli_num_rows($result) > 0) {
-          // output data of each row
-          //$user_list = mysqli_fetch_assoc($result);
-          // echo "<pre>"; print_r($user_list);exit;
-
-              while($row = mysqli_fetch_assoc($result)) {
-              // echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["email"]. "<br>";
-                ?>
-                <option value="<?= $row["purpose"];?>"><?= $row["purpose"];?></option>
-                <?php
-              }   
-            } else {
-              ?>
-              <tr>
-                <td colspan="3">No Record(s) found.</td>
-              </tr>
-              <?php
-            }
-            ?>
-            <?php 
-            mysqli_close($conn);
-            ?>                
-          </select>
-           <label for="Type">Type</label>
-           <select class="custom-select-sm  form-control form-control-sm " name="type" required="">
-
-              <?php
-              if (mysqli_num_rows($result2) > 0) {
-          // output data of each row
-          //$user_list = mysqli_fetch_assoc($result);
-          // echo "<pre>"; print_r($user_list);exit;
-
-                while($row = mysqli_fetch_assoc($result2)) {
-              // echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["email"]. "<br>";
-                  ?>
-
-                  <option value="<?= $row["type"];?>"  ><?= $row["type"];?></option>
-                  <?php
-                }    
-              } else {
-                ?>
-                <tr>
-                  <td colspan="3">No Record(s) found.</td>
-                </tr>
-                <?php
-              }
-              ?>
-              <?php 
-              mysqli_close($conn);
-              ?>
-
-            </select>
-                      </div>
+                                            </div>
                        
 
                         

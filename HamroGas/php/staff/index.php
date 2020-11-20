@@ -341,7 +341,7 @@ include("include/header.php");
             <div class="part">
                 <span><i class="fas fa-eye" style="font-size: 50px;"></i></span>
                 <span>
-                  <p style="margin-right: 30px; color: #1f975bc9; font-size: 18px;">VIEWS</p>
+                  <p style="margin-right: 30px; color: #1f975bc9; font-size: 18px;">HITS</p>
                   <?php 
                     $conn = mysqli_connect('localhost','root','','notify');
 

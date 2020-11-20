@@ -11,16 +11,25 @@ $sql1 = "SELECT * FROM `customer` WHERE `email`= '$gmail'";
 $result1 = mysqli_query($conn, $sql1);
 $row1 = mysqli_fetch_assoc($result1);
 $t=$row1['item'];
+$ty=$row1['type'];
 
+if($ty=="old"){
 $sql2 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
 $result2 = mysqli_query($conn, $sql2);
 $row2 = mysqli_fetch_assoc($result2);
+$xy=$row2['exc_price'];
+}else{
+    $sql2 = "SELECT new_price FROM `gas_cylinders` WHERE `title`= '$t'";
+$result2 = mysqli_query($conn, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
+$xy=$row2['new_price'];
+}
     
     $quantity=$row1['quantity'];
     $cid=$row1['customer_id'];
     //echo $row1['quantity'];
     // Convert price to cents 
-    $itemPrice = ($row2['exc_price']*$quantity*100); 
+    $itemPrice = ($xy*$quantity*100); 
  //--------------------------------------------------------------
  
 //-------itemname------
@@ -138,13 +147,13 @@ if(!empty($_POST['stripeToken'])){
   <div class="d-flex justify-content-between text-muted mb-3">
     <div class="px-3">PRICE</div>
     
-    <div class="px-3 "><?php echo $itemPrice.' '.$currency; ?></div>
+    <div class="px-3 "><?php echo ($itemPrice/100).' '.$currency; ?></div>
   </div>
   <hr class="text-center mb-4 w-75">
     <div class="d-flex justify-content-between text-danger mb-3 animated flash delay-2s">
     <div class="px-3"><h4>Amount Paid</h4></div>
     
-    <div class="px-3"><h4><?php echo $paidAmount.' '.$paidCurrency; ?></h4></div>
+    <div class="px-3"><h4><?php echo ($paidAmount/100).' '.$paidCurrency; ?></h4></div>
   </div>
   </div>
  </div>

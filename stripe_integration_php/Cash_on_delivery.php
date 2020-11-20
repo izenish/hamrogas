@@ -10,12 +10,20 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 $t=$row['item'];
+$ty=$row['type'];
 
+if($ty=="old"){
 $sql1 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$t'";
 $result1 = mysqli_query($conn, $sql1);
 $row1 = mysqli_fetch_assoc($result1);
+$xy=$row1['exc_price'];
+}else{
+  $sql1 = "SELECT new_price FROM `gas_cylinders` WHERE `title`= '$t'";
+$result1 = mysqli_query($conn, $sql1);
+$row1 = mysqli_fetch_assoc($result1);
+$xy=$row1['new_price'];
+}
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -63,7 +71,7 @@ $row1 = mysqli_fetch_assoc($result1);
 
 </div>
     <div class="p-2 "><span class="rounded border border-dark px-2 py-1"><?= $row['quantity']; ?></span></div>
-    <div class="p-2 "><?= $row1['exc_price']?></div>
+    <div class="p-2 "><?= $xy?></div>
   </div>
 				    
 					
@@ -75,7 +83,7 @@ $row1 = mysqli_fetch_assoc($result1);
     <div class="px-3">Subtotal</div>
     
     <div class="px-3 "><?php 
-                        $stotal=($row['quantity'])*($row1['exc_price']);
+                        $stotal=($row['quantity'])*($xy);
                     echo $stotal ?></div>
   </div>
   <div class="d-flex justify-content-between text-muted mb-3">

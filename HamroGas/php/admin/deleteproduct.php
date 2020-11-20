@@ -7,7 +7,7 @@ if(isset($_GET['mask']))
 	// exit();
 	$delete_id = $_GET['mask'];
 
-	$sql = mysqli_query($conn,"DELETE FROM gas_cylinders WHERE gas_id = '$delete_id'");
+	$sql = mysqli_query($conn,"DELETE FROM product WHERE id = '$delete_id'");
 	if($sql)
 	{
 		header('location: display_product.php');

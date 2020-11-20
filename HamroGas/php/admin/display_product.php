@@ -41,7 +41,7 @@
 
 
   <div class="main_body"> 
-    <div class="sidebar_menu">
+   <div class="sidebar_menu">
           <div class="inner__sidebar_menu">
 
             <ul>
@@ -70,7 +70,7 @@
                       <span class="icon"><i class="fas fa-users"></i></span>     
                       <span class="list">UnDelivered list</span>
                     </a>
-                     <a href="pending.php" >
+                    <a href="pending.php" >
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Unverified List</span>
                       </a>
@@ -79,18 +79,50 @@
                         <span class="list">Delivered List</span>
                       </a>
                   </div>
-              
-                  <li>
-                <a href="product.php">
-                  <span class="icon"><i class="far fa-comments"></i></span>
-                  <span class="list">Product</span>
-                </a>
+                     <li>
+                 <button class="dropdown-btn" style="background: #5343c7; color: #fff;">   
+                    <span class="icon"><i class="fab fa-product-hunt"></i></span>
+                    <span class="list">Product</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="product.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                      <a href="Stock.php" >
+                        <span class="icon"><i class="far fa-comments"></i></span> 
+                        <span class="list">Stock</span>
+                      </a>
+                  </div>
               </li>
               <li>
                 <a href="#">
                   <span class="icon"><i class="fas fa-address-book"></i></span>
                   <span class="list">Contact</span>
                 </a>
+              </li>
+               <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fas fa-truck-loading"></i></span>
+                    <span class="list">Admin</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                 
+                      <a href="admin_list.php" >
+                        <span class="icon"><i class="fas fa-cog"></i></span> 
+                        <span class="list">Manage</span>
+                      </a>
+                  </div>
               </li>
               <li>
                  <button class="dropdown-btn" >   
@@ -105,12 +137,17 @@
                       <span class="icon"><i class="fas fa-plus"></i></span>     
                       <span class="list">Add</span>
                     </a>
+                      <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add_admin</span>
+                    </a>
                       <a href="manage_deliveryStaff.php" >
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Manage</span>
                       </a>
                   </div>
               </li>
+
                    <li>
                  <button class="dropdown-btn" >   
                     <span class="icon"><i class="far fa-comments"></i></span>
@@ -161,14 +198,12 @@
 
           </div>
       </div>
-
-
          <div class="container">
 
 <nav aria-label="breadcrumb" style="margin-bottom: 25px;">
   <ol class="breadcrumb" style="background-color: #dce1e9;">
     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Ordered list</li>
+    <li class="breadcrumb-item active" aria-current="page">Add Product</li>
   </ol>
 </nav>
   <div class="row">
@@ -185,13 +220,13 @@
             <th scope="col">S.N</th>
             <th scope="col">Image</th>
             <th scope="col">Name</th>
-            <th scope="col">price</th>
+            <th scope="col">Content</th>
+            <th scope="col">New_price</th>
+            <th scope="col">Exchange_price</th>
             <th scope="col">Stock</th>
-            <th scope="col">Purpose</th>
-            <th scope="col">Type</th>
-            <th scope="col">content</th>
-            <th scope="col">User</th>
+            <th scope="col">User_name</th>
             <th scope="col">Email</th>
+            <th scope="col">Added_Date</th>
             <!-- <th scope="col">Price</th> -->
             <th scope="col">Edit</th>
           </tr>
@@ -199,7 +234,7 @@
         <tbody>
           <?php 
       $sn=1;
-     $sql = mysqli_query($conn,"SELECT * FROM gas_cylinders");
+     $sql = mysqli_query($conn,"SELECT * FROM product");
      
     
 
@@ -212,20 +247,20 @@
      ?>
           <tr>
             <th scope="row"><?php echo $sn++; ?></th>
-            <td style="text-align: center;"><img style="width: 80px; border: 1px solid #eee;" src="../../../images/products/<?= $main_result['featured_image'];?>" alt="Thumb"></td>
-            <td><?php echo $main_result['title'];?></td>
+            <td style="text-align: center;"><img style="width: 80px; border: 1px solid #eee;" src="../../../images/products/<?= $main_result['image'];?>" alt="Thumb"></td>
+            <td><?php echo $main_result['Name'];?></td>
+            <td><?php echo $main_result['Content']; ?></td>
+            <td><?php echo $main_result['new_Price']; ?></td>
             <td><?php echo $main_result['exc_price']; ?></td>
             <td><?php echo $main_result['stock']; ?></td>
-            <td><?php echo $main_result['purpose']; ?></td>
-            <td><?php echo $main_result['type']; ?></td>
-            <td><?php echo $main_result['content']; ?></td>
             <td><?php echo $main_result['user_name']; ?></td>
             <td><?php echo $main_result['email']; ?></td>
+            <td><?php echo $main_result['ADD_Date']; ?></td>
                       <!-- <td><?php// echo $main_result['item_price']; ?></td> -->
             
          <!--    <td><a href="delete.php?id=<?php// echo($main_result['id']);?>" class="text-danger"><i
                   class="fas fa-trash-alt"></i></a></td> -->
-                <td align="center"><a onclick="confirm(<?php echo($main_result['gas_id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="fas fa-trash-alt"></i></a></td> 
+                <td align="center"><a onclick="confirm(<?php echo($main_result['id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="fas fa-trash-alt"></i></a></td> 
 
           </tr>
           <?php }

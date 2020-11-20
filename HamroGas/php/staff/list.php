@@ -118,7 +118,11 @@
             <th scope="col">Email</th>
             <th scope="col">ordered</th>
             <th scope="col">Number</th>
+
             <th scope="col">Date</th>
+            <th scope="col">Amount</th>
+
+
             <!-- <th scope="col">Price</th> -->
             <th scope="col">Location</th>
             <th scope="col">Status</th>
@@ -141,19 +145,36 @@
             <th scope="row"><?php echo $sn++; ?></th>
             <td style="text-align: center;"><img style="width: 80px; border: 1px solid #eee;" src="../../../stripe_integration_php\files/<?= $main_result["profile"];?>" alt="Thumb"></td>
             <td><?php echo $main_result['first_name'];echo ' ';echo $main_result['last_name']; ?></td>
+
             <td><?php echo $main_result['email']; ?></td>
             <td><?php echo $main_result['item']; ?></td>
+
             <td><?php echo $main_result['quantity']; ?></td>
+
             <td><?php echo $main_result['created_at']; ?></td>
-                      <!-- <td><?php// echo $main_result['item_price']; ?></td> -->
+            <?php
+             if( $main_result['payment']=="COD")
+             {
+               ?>
+
+            <td><?php echo $main_result['amt']; 
+            ?> </td>
+            <?php
+            }
+            else{?>
+              <td><p>Paid</p></td>
+
+            <?php }
+            ?>
             
-         <!--    <td><a href="delete.php?id=<?php// echo($main_result['id']);?>" class="text-danger"><i
-                  class="fas fa-trash-alt"></i></a></td> -->
+            
+
+
                 <td align="center"><a onclick="map(<?php   echo($main_result['customer_id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="btn btn-primary" style="font-style: normal;">Location</i></a></td>  
-                <td align="center"><a onclick="delivered(<?php echo($main_result['customer_id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="btn btn-primary " style="font-style: normal;">Delivered</i></a>
+                <td align="center"><a onclick="delivered(<?php echo($main_result['customer_id']);?>);" style="cursor: pointer; color:#dd3e4e;"><i class="btn btn-primary " style="font-style: normal;">InProgress</i></a>
                  </td>     
           </tr>
-          <?php }
+            <?php }
            ?>
         </tbody>
       </table>

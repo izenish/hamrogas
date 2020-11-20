@@ -46,17 +46,50 @@ include("include/header.php");
                         <span class="list">Delivered List</span>
                       </a>
                   </div>
-                       <li>
-                <a href="product.php">
-                  <span class="icon"><i class="far fa-comments"></i></span>
-                  <span class="list">Product</span>
-                </a>
+                     <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fab fa-product-hunt"></i></span>
+                    <span class="list">Product</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="product.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                      <a href="Stock.php" >
+                        <span class="icon"><i class="far fa-comments"></i></span> 
+                        <span class="list">Stock</span>
+                      </a>
+                  </div>
               </li>
               <li>
                 <a href="#">
                   <span class="icon"><i class="fas fa-address-book"></i></span>
                   <span class="list">Contact</span>
                 </a>
+              </li>
+               <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fas fa-truck-loading"></i></span>
+                    <span class="list">Admin</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" style="background: #5343c7; color: #fff;" >
+                     <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                 
+                      <a href="admin_list.php" >
+                        <span class="icon"><i class="fas fa-cog"></i></span> 
+                        <span class="list">Manage</span>
+                      </a>
+                  </div>
               </li>
               <li>
                  <button class="dropdown-btn" >   
@@ -71,12 +104,17 @@ include("include/header.php");
                       <span class="icon"><i class="fas fa-plus"></i></span>     
                       <span class="list">Add</span>
                     </a>
+                      <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add_admin</span>
+                    </a>
                       <a href="manage_deliveryStaff.php" >
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Manage</span>
                       </a>
                   </div>
               </li>
+
                    <li>
                  <button class="dropdown-btn" >   
                     <span class="icon"><i class="far fa-comments"></i></span>
@@ -157,19 +195,19 @@ include("include/header.php");
                     <div class="row" style="padding-left: 20px;">
                         <div class="col-50" >
                         <label for="user-name"><i class="fa fa-user"></i>User Name</label>
-                        <input type="text" name="user-name" placeholder=" xyz" required="">
+                        <input type="text" name="user-name" placeholder=" amanmool10" required="">
                         <label for="phone">Phone</label>
-                        <input name="phone" placeholder=" 9800000000" 
+                        <input name="phone" placeholder=" 9812231231" 
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type = "number"
                                 maxlength = "10"/>       
                         <label for="Address">Address</label>
-                        <input type="text" name="address" placeholder=" " maxlength="10">
+                        <input type="text" name="address" placeholder=" Golmadi" maxlength="10">
 
                           <div class="row"> 
                               <div class="col-50">
                                 <label for="state">State</label>
-                                <input type="text" id="state" name="state" placeholder="3">
+                                <input type="text" id="state" name="state" placeholder="NY">
                               </div>
                               <div class="col-50">
                                 <label for="zip_code">Zip</label>
@@ -185,9 +223,9 @@ include("include/header.php");
 
                          <div class="col-50">
                         <label for="full-name"><i class="fa fa-user"></i>Full Name</label>
-                        <input type="text" name="full-name" placeholder=" xyz">
+                        <input type="text" name="full-name" placeholder=" Aman Mool">
                         <label for="email" ><i class="fa fa-envelope"></i>Email</label>
-                        <input type="email" name="email" placeholder=" xyz@gmail.com" required="">
+                        <input type="email" name="email" placeholder=" amanmool@gmail.com" required="">
                         <label for="password">Password</label>
                         <input type="password" name="password" placeholder="" required="">
                         <label for="re-password">Re-Password</label>

@@ -95,9 +95,24 @@ if (mysqli_num_rows($resultq) > 0){
     $j = $otp;
     $lat=$_POST['latitude'];
     $long=$_POST['longitude'];
+    $ty=$_POST['type'];
 
-    $sql = "INSERT INTO `customer` (`first_name`, `email`,`last_name`,`item`,`purpose`,`payment`,`quantity`,`phone_number`,`profile`,`address`,`citizenship_card`,`code`,`latitude`,`longitude`)
-    VALUES ('$u', '$e', '$p', '$a', '$b', '$c', '$d', '$f', '$g', '$h', '$i', '$j','$lat','$long');";
+    if($ty=="old"){
+      $sql1 = "SELECT exc_price FROM `gas_cylinders` WHERE `title`= '$a'";
+      $result1 = mysqli_query($conn, $sql1);
+      $row1 = mysqli_fetch_assoc($result1);
+      $xy=$row1['exc_price']*$d;
+      }else{
+        $sql1 = "SELECT new_price FROM `gas_cylinders` WHERE `title`= '$a'";
+      $result1 = mysqli_query($conn, $sql1);
+      $row1 = mysqli_fetch_assoc($result1);
+      $xy=$row1['new_price']*$d;
+      }
+      
+      
+
+    $sql = "INSERT INTO `customer` (`amt`,`type`,`first_name`, `email`,`last_name`,`item`,`purpose`,`payment`,`quantity`,`phone_number`,`profile`,`address`,`citizenship_card`,`code`,`latitude`,`longitude`)
+    VALUES ('$xy','$ty','$u', '$e', '$p', '$a', '$b', '$c', '$d', '$f', '$g', '$h', '$i', '$j','$lat','$long');";
   //echo $sql;
 
   require_once("DBConnect.php");

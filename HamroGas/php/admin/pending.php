@@ -60,7 +60,7 @@
 
 
   <div class="main_body"> 
-   <div class="sidebar_menu">
+  <div class="sidebar_menu">
           <div class="inner__sidebar_menu">
 
             <ul>
@@ -89,7 +89,7 @@
                       <span class="icon"><i class="fas fa-users"></i></span>     
                       <span class="list">UnDelivered list</span>
                     </a>
-                    <a href="pending.php" >
+                    <a href="pending.php" style="background: #5343c7; color: #fff;">
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Unverified List</span>
                       </a>
@@ -98,17 +98,50 @@
                         <span class="list">Delivered List</span>
                       </a>
                   </div>
-                       <li>
-                <a href="product.php">
-                  <span class="icon"><i class="far fa-comments"></i></span>
-                  <span class="list">Product</span>
-                </a>
+                     <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fab fa-product-hunt"></i></span>
+                    <span class="list">Product</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="product.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                      <a href="Stock.php" >
+                        <span class="icon"><i class="far fa-comments"></i></span> 
+                        <span class="list">Stock</span>
+                      </a>
+                  </div>
               </li>
               <li>
                 <a href="#">
                   <span class="icon"><i class="fas fa-address-book"></i></span>
                   <span class="list">Contact</span>
                 </a>
+              </li>
+               <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fas fa-truck-loading"></i></span>
+                    <span class="list">Admin</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                 
+                      <a href="admin_list.php" >
+                        <span class="icon"><i class="fas fa-cog"></i></span> 
+                        <span class="list">Manage</span>
+                      </a>
+                  </div>
               </li>
               <li>
                  <button class="dropdown-btn" >   
@@ -123,12 +156,17 @@
                       <span class="icon"><i class="fas fa-plus"></i></span>     
                       <span class="list">Add</span>
                     </a>
+                      <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add_admin</span>
+                    </a>
                       <a href="manage_deliveryStaff.php" >
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Manage</span>
                       </a>
                   </div>
               </li>
+
                    <li>
                  <button class="dropdown-btn" >   
                     <span class="icon"><i class="far fa-comments"></i></span>

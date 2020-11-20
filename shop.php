@@ -175,7 +175,7 @@ include "include/dbconnect.php";
     <div class="row" id="up">
       <!-- <div class="col-md-12">Shop > Gas Cylinder</div>
  -->
-      <div class="row">
+      <div class="row" >
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>

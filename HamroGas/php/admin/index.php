@@ -234,17 +234,50 @@ include("include/header.php");
                         <span class="list">Delivered List</span>
                       </a>
                   </div>
-                       <li>
-                <a href="product.php">
-                  <span class="icon"><i class="far fa-comments"></i></span>
-                  <span class="list">Product</span>
-                </a>
+                     <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fab fa-product-hunt"></i></span>
+                    <span class="list">Product</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="product.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                      <a href="Stock.php" >
+                        <span class="icon"><i class="far fa-comments"></i></span> 
+                        <span class="list">Stock</span>
+                      </a>
+                  </div>
               </li>
               <li>
                 <a href="#">
                   <span class="icon"><i class="fas fa-address-book"></i></span>
                   <span class="list">Contact</span>
                 </a>
+              </li>
+               <li>
+                 <button class="dropdown-btn" >   
+                    <span class="icon"><i class="fas fa-truck-loading"></i></span>
+                    <span class="list">Admin</span>
+                    <span class="down"><i class="fa fa-caret-down"></i></span>
+                    
+                  </button>
+
+                  <div class="dropdown-container" >
+                     <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add</span>
+                    </a>
+                 
+                      <a href="admin_list.php" >
+                        <span class="icon"><i class="fas fa-cog"></i></span> 
+                        <span class="list">Manage</span>
+                      </a>
+                  </div>
               </li>
               <li>
                  <button class="dropdown-btn" >   
@@ -259,12 +292,17 @@ include("include/header.php");
                       <span class="icon"><i class="fas fa-plus"></i></span>     
                       <span class="list">Add</span>
                     </a>
+                      <a href="add_admin.php">
+                      <span class="icon"><i class="fas fa-plus"></i></span>     
+                      <span class="list">Add_admin</span>
+                    </a>
                       <a href="manage_deliveryStaff.php" >
                         <span class="icon"><i class="fas fa-cog"></i></span> 
                         <span class="list">Manage</span>
                       </a>
                   </div>
               </li>
+
                    <li>
                  <button class="dropdown-btn" >   
                     <span class="icon"><i class="far fa-comments"></i></span>
@@ -291,9 +329,9 @@ include("include/header.php");
                 </a>
               </li>
               <li>
-                <a href="review.php">
+                <a href="#">
                   <span class="icon"><i class="fab fa-blogger"></i></span>
-                  <span class="list">reviews</span>
+                  <span class="list">Blogs</span>
                 </a>
               </li>
               <li>
@@ -332,7 +370,7 @@ include("include/header.php");
                 
                 <span><i class="fas fa-eye" style="font-size: 50px;"></i></span>
                 <span>
-                  <p style="margin-right: 30px; color: /*#0ebeff*/#1f975bc9; font-size: 18px;">[ VIEWS ]</p>
+                  <p style="margin-right: 30px; color: /*#0ebeff*/#1f975bc9; font-size: 18px;">VIEWS</p>
                   <?php 
                     $conn = mysqli_connect('localhost','root','','notify');
 
@@ -361,7 +399,7 @@ include("include/header.php");
              <div class="part">
                 <span><i class="fas fa-users" style="font-size: 50px;"></i></span>
                 <span>
-                  <p style="margin-right: 30px; color: #1f975bc9; font-size: 18px;">[ Staff ] </p>
+                  <p style="margin-right: 30px; color: #1f975bc9; font-size: 18px;">STAFF</p>
                   <?php 
                     $conn = mysqli_connect('localhost','root','','notify');
 
@@ -388,7 +426,7 @@ include("include/header.php");
             <div class="part"> 
              <span><i class="fas fa-user-check" style="font-size: 50px;"></i></span>
                 <span>
-                  <p style="margin-right: 0px; color: #1f975bc9; font-size: 18px;">[ Available Staff ]</p>
+                  <p style="margin-right: 0px; color: #1f975bc9; font-size: 18px;">AVAILABLE STAFF</p>
                   <?php 
                     $conn = mysqli_connect('localhost','root','','notify');
 
@@ -410,9 +448,9 @@ include("include/header.php");
                 </span>
             </div>
             <div class="part">
-                <span><i class="fas fa-eye" style="font-size: 50px;"></i></span>
+                <span><i class="fab fa-product-hunt" style="font-size: 50px;"></i></span>
                 <span>
-                  <p style="margin-right: 30px; color: #1f975bc9; font-size: 18px;">[ VIEWS ]</p>
+                  <p style="margin-right: 30px; color: #1f975bc9; font-size: 18px;">TOTAL SALES</p>
                   <?php 
                     $conn = mysqli_connect('localhost','root','','notify');
 
@@ -421,7 +459,7 @@ include("include/header.php");
                       die("couldnot connect").mysqli_error($conn);
                     }
 
-                    $sql = "SELECT * FROM `view_stats`";
+                    $sql = "SELECT SUM(QUANTITY) as total FROM `delivered`";
 
                     $result = mysqli_query($conn,$sql);
                     $total =0;
@@ -429,7 +467,7 @@ include("include/header.php");
                     {
                       while($row= mysqli_fetch_assoc($result))
                       {
-                        $total = $total + $row['page_views'];
+                        $total = $row['total'];
                       }
                        echo "<p style='margin-left:-30px; font-size:25px;'>".$total."</p>";
                     }
